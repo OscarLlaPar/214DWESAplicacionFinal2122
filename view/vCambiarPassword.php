@@ -11,13 +11,10 @@
             <form action="index.php" method="post">
                 <table>
                     <tr>
-                        <label for="password">Contraseña actual: </label>
                         <input id="password" type="password" name="password" placeholder="Contraseña actual">
                         <?php echo (isset($aErrores['password']))?"<span>".$aErrores['password']."</span>":""; ?>
-                        <label for="nuevaPassword">Nueva contraseña: </label>
                         <input id="nuevaPassword" type="password" name="nuevaPassword" placeholder="Nueva contraseña">
                         <?php echo (isset($aErrores['nuevaPassword']))?"<span>".$aErrores['nuevaPassword']."</span>":""; ?>
-                        <label for="confirmarPassword">Confirmar contraseña: </label>
                         <input id="confirmarPassword" type="password" name="confirmarPassword" placeholder="Confirmar contraseña">
                         <?php echo (isset($aErrores['confirmarPassword']))?"<span>".$aErrores['confirmarPassword']."</span>":""; ?>
                         <div>

@@ -5,7 +5,7 @@ main{
     align-items: center;
     /*gap: 48px;*/
     height:90vh;
-    padding-bottom: 50px;
+    width:100vw;
 }
 .titulo{
     display:flex;

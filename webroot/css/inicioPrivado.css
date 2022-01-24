@@ -4,5 +4,6 @@ main{
     align-items: center;
     justify-content: space-around;
     font-family: Yantramanav;
-    height:75vh;
+    gap:24px;
+    overflow-y:auto;
 }
