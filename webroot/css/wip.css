@@ -1,0 +1,15 @@
+main{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size:64px;
+}
+.wip{
+    font-family: Amiri;
+    font-size:112px;
+}
+main p{
+    font-family: Amiri;
+    
+}

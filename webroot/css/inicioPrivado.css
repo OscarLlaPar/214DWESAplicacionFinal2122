@@ -1,0 +1,8 @@
+main{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Yantramanav;
+    height:75vh;
+}

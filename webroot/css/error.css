@@ -1,0 +1,21 @@
+main{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    gap:32px;
+}
+table,td,th{
+    border: solid grey 1px;
+    border-collapse: collapse;
+    padding:15px;
+}
+th{
+    background-color: #87012B;
+    font-family: Yantramanav;
+    text-transform: uppercase;
+}
+td{
+    background-color: lightgrey;
+    color: black;
+}

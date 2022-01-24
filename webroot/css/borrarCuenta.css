@@ -1,0 +1,28 @@
+main{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+td{
+    padding:10px;
+}
+form{
+    font-size:24px;
+    display: flex;
+    flex-flow: column;
+    gap:16px;
+    align-items: center;
+}
+form div{
+    display:flex;
+    justify-content: center;
+}
+.boton{
+    width: 150px;
+    margin: 5px;
+}
+.confirmar{
+    font-family: Amiri;
+}

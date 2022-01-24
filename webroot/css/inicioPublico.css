@@ -1,0 +1,55 @@
+main{
+    display:flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    /*gap: 48px;*/
+    height:90vh;
+    padding-bottom: 50px;
+}
+.titulo{
+    display:flex;
+    font-family: Amiri;
+    font-size: 56px;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+}
+.enlaces{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+    width:100%;
+}
+.tarjeta{
+    background-color: black;
+    border-left: solid dimgrey 5px;
+    border-top: solid dimgrey 1px;
+    border-bottom: solid dimgrey 1px;
+    border-right: solid dimgrey 1px;
+    font-family: Amiri;
+    font-size: 28px;
+    padding:10px 15px;
+    width:23%;
+    height:100%;
+    line-height:100%;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+.tarjeta:hover{
+    border-left: solid lightgrey 5px;
+    border-top: solid lightgrey 1px;
+    border-bottom: solid lightgrey 1px;
+    border-right: solid lightgrey 1px;
+}
+.tarjeta a{
+    text-decoration: none;
+    color: #8D7DFA;
+    font-family:Yantramanav;
+    font-size:18px;
+    font-weight:bold;
+    text-transform: uppercase;
+}

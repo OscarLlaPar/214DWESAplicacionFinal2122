@@ -1,0 +1,32 @@
+main{
+    display:flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    /*gap: 48px;*/
+    height:90vh;
+    padding-bottom: 50px;
+}
+form{
+    font-size:24px;
+    display: flex;
+    flex-flow: column;
+    gap:16px;
+    align-items: center;
+}
+#registro, #volver{
+    border:none;
+    background-color: transparent;
+    color: white;
+    font-size:16px;
+    transition: all 0.5s ease;
+}
+form div{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+}
+#registro:hover, #volver:hover{
+    color: #8D7DFA;
+    cursor: pointer;
+}

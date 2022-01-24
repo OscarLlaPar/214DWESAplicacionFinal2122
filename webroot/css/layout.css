@@ -1,0 +1,89 @@
+@font-face{
+    font-family: Amiri;
+    src: url('fonts/Amiri/Amiri-Regular.ttf');
+}
+@font-face{
+    font-family: Poppins;
+    src: url('fonts/Poppins/Poppins-Thin.ttf');
+}
+@font-face{
+    font-family: Yantramanav;
+    src: url('fonts/Yantramanav/Yantramanav-Regular.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    background-image: url('../img/background2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: fixed;
+    background-attachment: fixed;
+    color:white;
+    height:100vh;
+    width:100vw;
+    font-family: Yantramanav;
+    display:flex;
+    flex-flow:column;
+}
+header{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    font-size:20px;
+    height:10vh;
+}
+h2{
+    font-family: Amiri;
+    font-size: 56px;
+    height:72px;
+    font-weight: lighter;
+}
+input[type="text"], input[type="password"]{
+    border: none;
+    padding: 10px;
+    font-family: Yantramanav;
+    font-size: 16px;
+    border: solid grey 2px;
+}
+input[readonly]{
+    background-color: dimgray;
+    color:lightgrey;
+}
+.boton{
+    color:white;
+    background-color: transparent;
+    border:none;
+    border: solid #8D7DFA 2px;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding:15px;
+    transition: all 0.5s ease;
+    font-family: Yantramanav;
+}
+.boton:hover{
+    background-color: #8D7DFA;
+    cursor: pointer;
+}
+.fotoPerfil{
+    height:100px;
+    width:100px;
+}
+footer{
+    background-color:black;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+/*PROVISIONAL*/
+footer img{
+    height:15px;
+}
