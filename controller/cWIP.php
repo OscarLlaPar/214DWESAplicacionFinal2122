@@ -1,6 +1,7 @@
 <?php
     if(isset($_REQUEST['volver'])){
         $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+        $_SESSION['paginaAnterior']='WIP';
         header('Location: index.php');
         exit;
     }

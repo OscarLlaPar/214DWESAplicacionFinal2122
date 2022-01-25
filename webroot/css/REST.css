@@ -1,0 +1,69 @@
+/*main{
+    display:flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+    margin:50px 0;
+}*/
+.resultado{
+    margin:auto;
+    display:flex;
+    align-items: center;
+    flex-flow: column;
+    gap:10px;
+    width:100vw;
+    
+}
+.definirRest{
+    text-align: center;
+    margin:10px 0;
+}
+.libro{
+    background-color: black;
+    border-left: solid dimgrey 5px;
+    border-top: solid dimgrey 1px;
+    border-bottom: solid dimgrey 1px;
+    border-right: solid dimgrey 1px;
+    width:90%;
+    max-height:200px;
+    padding:10px;
+    transition: all 0.5s ease;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: center;
+    align-items:flex-start;
+}
+.libro *{
+    margin:auto;
+}
+.libro:hover{
+    border-left: solid lightgrey 5px;
+    border-top: solid lightgrey 1px;
+    border-bottom: solid lightgrey 1px;
+    border-right: solid lightgrey 1px;
+}
+.libro h3{
+    font-family: Amiri;
+    text-align:center;
+    font-weight: lighter;
+    font-size:24px;
+}
+.libro img{
+    flex-basis:100%;
+    width:8%;
+}
+.titulo{
+    height: 20%;
+    
+    width:92%;
+}
+.descripcion{
+    padding:10px;
+    width:92%;
+}
+form{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-bottom: 20px;
+}
