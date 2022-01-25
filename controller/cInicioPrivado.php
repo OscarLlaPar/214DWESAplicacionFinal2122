@@ -29,6 +29,13 @@
         exit;
     }
     
+    if(isset($_REQUEST['apiRest'])){
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso'] = 'REST';
+        header('Location: index.php');
+        exit;
+    }
+    
     if(isset($_REQUEST['logout'])){
         session_unset();
         session_destroy();

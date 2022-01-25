@@ -24,6 +24,7 @@
         "miCuenta" => "controller/cMiCuenta.php",
         "borrarCuenta" => "controller/cBorrarCuenta.php",
         "cambiarPassword" => "controller/cCambiarPassword.php",
+        "REST" => "controller/cREST.php",
         "WIP" => "controller/cWIP.php",
         "error" => "controller/cError.php"
     ];
@@ -38,6 +39,7 @@
         "miCuenta" => "view/vMiCuenta.php",
         "borrarCuenta" => "view/vBorrarCuenta.php",
         "cambiarPassword" => "view/vCambiarPassword.php",
+        "REST" => "view/vREST.php",
         "WIP" => "view/vWIP.php",
         "error" => "view/vError.php"
     ];
