@@ -34,8 +34,11 @@
     if($bEntradaOK){
         $aRespuestas['busqueda']=$_REQUEST['busqueda'];
         $aRespuestas['busqueda']=strtr($aRespuestas['busqueda'], " ", "-");
-        $resultadoAPI=file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$aRespuestas['busqueda']);
-        $aResultadoAPI=json_decode($resultadoAPI,true);
+        
+        $aLibros=REST::buscarLibrosPorTitulo($aRespuestas['busqueda']);
+        
+        /*$resultadoAPI=file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$aRespuestas['busqueda']);
+        $aResultadoAPI=json_decode($resultadoAPI,true);*/
     }
     
     /*print_r($aResultadoAPI["items"][0]);*/

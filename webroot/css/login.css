@@ -3,9 +3,7 @@ main{
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
-    /*gap: 48px;*/
-    height:90vh;
-    padding-bottom: 50px;
+    gap: 72px;
 }
 form{
     font-size:24px;

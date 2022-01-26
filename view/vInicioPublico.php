@@ -5,7 +5,7 @@
         </head>
         <main>
             <div class="titulo">
-                <p>¡Bienvenido a LoginLogout!</p>
+                <p>¡Bienvenido a AplicacionFinal!</p>
                 <form action="index.php" method="post">
                     <button type="submit" name="login" class="boton">Log in</button>
                 </form>

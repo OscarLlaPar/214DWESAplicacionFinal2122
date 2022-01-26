@@ -16,18 +16,18 @@
             </form>
             <div class="resultado">
                 <?php
-                    if($aResultadoAPI["totalItems"]>0){
-                        foreach($aResultadoAPI["items"] as $item){
+                    if(isset($aLibros)){
+                        foreach($aLibros as $item){
                 ?>
                     <div class="libro">
-                        <img src="<?php echo (isset($item['volumeInfo']['imageLinks']))?$item['volumeInfo']['imageLinks']['thumbnail']:"webroot/img/nodisponible.jpg"?>">
+                        <img src="<?php echo $item->getImagen(); ?>">
                         <div class="titulo">
-                            <h3><?php echo $item['volumeInfo']['title'] ?></h3>
+                            <h3><?php echo $item->getTitulo() ?></h3>
                         </div>
 
-                        <p class="descripcion">
-                            <?php echo (isset($item['searchInfo']['textSnippet']))?$item['searchInfo']['textSnippet']:"Descripción no disponible" ?>
-                        </p>
+                        <!--<p class="descripcion">
+                            <?php //echo ($item['searchInfo']['textSnippet'])??"Descripción no disponible" ?>
+                        </p>-->
                     </div>
                 <?php
                         }
