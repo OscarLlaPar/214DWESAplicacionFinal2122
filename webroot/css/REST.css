@@ -29,13 +29,13 @@
     padding:10px;
     transition: all 0.5s ease;
     display:flex;
-    flex-flow:column wrap;
     justify-content: center;
     align-items:flex-start;
+    gap:15px;
 }
-.libro *{
+/*.libro *{
     margin:auto;
-}
+}*/
 .libro:hover{
     border-left: solid lightgrey 5px;
     border-top: solid lightgrey 1px;
@@ -44,18 +44,36 @@
 }
 .libro h3{
     font-family: Amiri;
-    text-align:center;
     font-weight: lighter;
     font-size:24px;
+    line-height: 120%;
+    margin-bottom:10px;
 }
-.libro img{
-    flex-basis:100%;
-    width:8%;
+.libro .imagen{
+    height:200px;
+}
+.imagen img{
+    height:180px;
+    width: 115px;
 }
 .titulo{
-    height: 20%;
+    height: 180px;
     
     width:92%;
+    display:flex;
+    flex-flow: column;
+}
+.titulo a{
+    text-decoration: none;
+    color:#8D7DFA;
+}
+.titulo a:hover{
+    text-decoration: underline;
+}
+.editorial{
+    font-style: italic;
+    font-size:16px;
+    color:grey;
 }
 .descripcion{
     padding:10px;

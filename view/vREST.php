@@ -20,14 +20,15 @@
                         foreach($aLibros as $item){
                 ?>
                     <div class="libro">
-                        <img src="<?php echo $item->getImagen(); ?>">
-                        <div class="titulo">
-                            <h3><?php echo $item->getTitulo() ?></h3>
+                        <div class="imagen">
+                            <img src="<?php echo $item->getImagen(); ?>">
                         </div>
-
-                        <!--<p class="descripcion">
-                            <?php //echo ($item['searchInfo']['textSnippet'])??"Descripción no disponible" ?>
-                        </p>-->
+                        <div class="titulo">
+                            <h3><?php echo $item->getTitulo().", (".$item->getAnyoEdicion().")"; ?></h3>
+                            <p class="editorial"><?php echo $item->getEditorial(); ?></p>
+                            <p class="paginas"><?php echo $item->getPaginas(); ?> páginas</p>
+                            <a href="<?php echo $item->getLink(); ?>">Ver en Google Books &#62;&#62;</a>
+                        </div>
                     </div>
                 <?php
                         }
