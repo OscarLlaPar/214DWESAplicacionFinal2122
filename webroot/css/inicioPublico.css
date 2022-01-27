@@ -1,0 +1,92 @@
+main{
+    display:flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 72px;
+    height:fit-content;
+}
+.titulo{
+    display:flex;
+    font-family: Amiri;
+    font-size: 56px;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+}
+.enlaces{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+    width:100%;
+    height:fit-content;
+}
+.tarjeta{
+    background-color: black;
+    border-left: solid dimgrey 5px;
+    border-top: solid dimgrey 1px;
+    border-bottom: solid dimgrey 1px;
+    border-right: solid dimgrey 1px;
+    font-family: Amiri;
+    font-size: 28px;
+    padding:10px 15px;
+    width:23%;
+    min-width: 250px;
+    height:200px;
+    line-height:100%;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+.tarjeta:hover{
+    border-left: solid lightgrey 5px;
+    border-top: solid lightgrey 1px;
+    border-bottom: solid lightgrey 1px;
+    border-right: solid lightgrey 1px;
+}
+.tarjeta a, .textoDiagrama a{
+    text-decoration: none;
+    color: #8D7DFA;
+    font-family:Yantramanav;
+    font-size:16px;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+.diagramas{
+    padding-bottom: 50px;
+}
+.diagrama{
+    width:100%;
+    height:500px;
+    background-color:black;
+    display:flex;
+}
+.textoDiagrama{
+    width:60%;
+    padding:20px;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-between;
+}
+.textoDiagrama h2{
+    font-size:40px;
+}
+.textoDiagrama ul{
+    margin-left:50px;
+}
+.imagenDiagrama, .imagenDiagrama img{
+    height:100%;
+}
+.imagenDiagrama{
+    width:40%;
+}
+.imagenDiagrama img{
+    width:100%;
+}
+.diagrama:nth-child(2n){
+    background-color:white;
+    color:black;
+    flex-direction: row-reverse;
+}

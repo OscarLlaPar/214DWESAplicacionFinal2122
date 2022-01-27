@@ -1,0 +1,130 @@
+/**{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    color: white;
+}
+body{
+    background-color: black;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    display:flex;
+    flex-flow:column;
+    height: 100vh;
+    width:100vw;
+}
+header{
+    background-color:#0A001A;
+    width:100vw;
+    height: 10vh;
+    border-bottom:solid #2F95FA 1px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column;
+}
+
+main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80vh;
+    flex-flow: column;
+    gap: 20px;
+    padding-top: 100px;
+}
+h2{
+    font-size:18px;
+    color:#2F95FA;
+}
+.fotoPerfil{
+    height: 150px;
+    width: 150px;
+    border: solid white 3px;
+    border-radius: 8px;
+    padding:5px;
+}
+form, form table{
+    height:15vh;
+}
+input, label{
+    margin:5px;
+}
+input{
+    background-color:black;
+    padding: 5px;
+}
+input[readonly]{
+    background-color:grey;
+}
+input[readonly]:hover{
+    cursor:initial;
+}
+hr{
+    margin: 20px 0;
+}
+span{
+    color: #A7083C;
+}
+.boton{
+    border:solid blueviolet 2px;
+    padding:5px;
+    background-color: grey;
+    color:white;
+    margin:5px;
+    transition: all 0.2s ease-in;
+}
+.boton:hover{
+    cursor: pointer;
+    background-color:#2654EB;
+}
+.boton:active{
+    background-color:#3B0859;
+    border:solid #11319C 2px;
+}
+.wip{
+    font-size:80px;
+    font-weight:bold;
+}
+.error, .error td, .error th{
+    border:solid white 1px;
+    border-collapse: collapse;
+    padding: 10px;
+}
+.error th{
+    background-color: #8E0029;
+}
+footer{
+    text-align: left;
+    background-color:#0A001A;
+    border-top: solid white 1px;
+    font-family: serif;
+    font-size: 14px;
+    height: 10vh;
+    padding-left:20px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap:5px;
+    position:sticky;
+    bottom:0;
+}
+.giturl{
+    height:10px;
+}
+.detalle, .detalle div, .detalle table{
+    height:auto;
+    color:black;
+}
+.detalle{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 15px;
+}
+.e, .v{
+    background-color:black;
+    color: white;
+}*/

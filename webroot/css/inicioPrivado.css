@@ -1,0 +1,9 @@
+main{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Yantramanav;
+    gap:24px;
+    overflow-y:auto;
+}

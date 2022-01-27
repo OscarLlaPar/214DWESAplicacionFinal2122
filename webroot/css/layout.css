@@ -1,0 +1,151 @@
+@font-face{
+    font-family: Amiri;
+    src: url('fonts/Amiri/Amiri-Regular.ttf');
+}
+@font-face{
+    font-family: Poppins;
+    src: url('fonts/Poppins/Poppins-Thin.ttf');
+}
+@font-face{
+    font-family: Yantramanav;
+    src: url('fonts/Yantramanav/Yantramanav-Regular.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+body{
+    background-color: black;
+    background-image: url('../img/background2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    color:white;
+    height:max-content;
+    max-width:100vw;
+    /*height:100vh;*/
+    font-family: Yantramanav;
+    display:flex;
+    flex-flow:column;
+    /*overflow-x:hidden;*/
+}
+header{
+    display:flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size:20px;
+    height:10vh;
+    padding:10px 50px;
+    gap:75px;
+}
+header img{
+    height:100%;
+}
+main{
+    flex: 1 0 auto;
+    padding-bottom: 50px;
+    min-height:85vh;
+}
+h2{
+    font-family: Amiri;
+    font-size: 56px;
+    height:72px;
+    font-weight: lighter;
+}
+input[type="text"], input[type="password"]{
+    border: none;
+    padding: 10px;
+    font-family: Yantramanav;
+    font-size: 16px;
+    border: solid grey 2px;
+}
+input[readonly]{
+    background-color: dimgray;
+    color:lightgrey;
+}
+input[readonly]:hover{
+    cursor:default;
+}
+.boton{
+    color:white;
+    background-color: transparent;
+    border:none;
+    border: solid #8D7DFA 2px;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding:15px;
+    transition: all 0.5s ease;
+    font-family: Yantramanav;
+}
+span{
+    font-size: 16px;
+    color: #EB1A63;
+    font-family:Amiri;
+}
+.boton:hover{
+    background-color: #8D7DFA;
+    cursor: pointer;
+}
+.fotoPerfil{
+    height:100px;
+    width:100px;
+}
+footer{
+    justify-self: flex-end;
+    background-color:black;
+    display:block;
+    /*position:fixed;
+    bottom:0;*/
+    width:100%;
+    height:250px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+.contenidoFooter{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.nombreygit{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.sauces{
+    height:15%;
+    border-top:solid #262625 1px;
+    background: black;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.contenidoFooter ul{
+    list-style: none;
+}
+.contenidoFooter ul li{
+    padding: 10px 0;
+}
+.contenidoFooter a{
+    text-decoration: none;
+    color: #8D7DFA;
+    font-family:Yantramanav;
+    font-size:16px;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+.contenidoFooter a:hover{
+    color:white;
+}
+.giturl{
+    height:25px;
+}
+.logoFooter{
+    height:75px;
+}

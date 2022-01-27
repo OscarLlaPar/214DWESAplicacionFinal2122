@@ -1,0 +1,8 @@
+-AL EFECTUAR EL LOGIN
+    · $_SESSION['usuario214DWESAplicacionLoginLogout']: Almacena el objeto Usuario
+    · $_SESSION['paginaEnCurso']: Guarda el nombre (índice de array) de la página que se ha de cargar
+    · $_SESSION['paginaAnterior']: Guarda el nombre de la página anterior en la que ha estado el usuario
+-AL HACER LOGOUT
+    · Se destruye la sesión
+-CUANDO SE PRODUCE UN ERROR
+    · $_SESSION['error']: Almacena un objeto AppError
