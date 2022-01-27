@@ -15,20 +15,21 @@
         * @return Array Un array formado de objetos LibroREST
         */
         public static function buscarLibrosPorTitulo($sTitulo){
-            $resultadoAPI=file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$sTitulo);
+            $resultadoAPI=@file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$sTitulo);
             $aLibros=[];
             $aResultadoAPI=json_decode($resultadoAPI,true);
-            foreach($aResultadoAPI['items'] as $item){
+            if($aResultadoAPI){
+                foreach($aResultadoAPI['items'] as $item){
                 array_push($aLibros, new LibroREST(
-                        $item['volumeInfo']['title'],
-                        null, 
-                        $item['volumeInfo']['publisher']??"Editorial desconocida",
-                        $item['volumeInfo']['publishedDate']??"Año desconocido", 
-                        $item['volumeInfo']['pageCount']??"¿?", 
-                        $item['volumeInfo']['imageLinks']['thumbnail']??"webroot/img/nodisponible.jpg", 
-                        $item['volumeInfo']['infoLink'])); 
+                    $item['volumeInfo']['title'],
+                    $item['volumeInfo']['authors']??"Autor desconocido", 
+                    $item['volumeInfo']['publisher']??"Editorial desconocida",
+                    $item['volumeInfo']['publishedDate']??"Año desconocido", 
+                    $item['volumeInfo']['pageCount']??"¿?", 
+                    $item['volumeInfo']['imageLinks']['thumbnail']??"webroot/img/nodisponible.jpg", 
+                    $item['volumeInfo']['infoLink'])); 
+                }
             }
-            
             return $aLibros;
         }
     }

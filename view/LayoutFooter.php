@@ -2,7 +2,7 @@
             <div class="contenidoFooter">
                 <p>
                 Óscar Llamas Parra
-                <a href="https://github.com/OscarLlaPar/proyectoDAW" target="__blank"><img src="webroot/img/github.png" alt="Github" class="giturl"></img></a>
+                <a href="https://github.com/OscarLlaPar/214DWESAplicacionFinal2122" target="__blank"><img src="webroot/img/github.png" alt="Github" class="giturl"></img></a>
                 </p>
                 <p>
                     DAW 2
