@@ -35,11 +35,15 @@ body{
 }
 header{
     display:flex;
-    justify-content: space-around;
     align-items: center;
     text-transform: uppercase;
     font-size:20px;
     height:10vh;
+    padding:10px 50px;
+    gap:75px;
+}
+header img{
+    height:100%;
 }
 main{
     flex: 1 0 auto;
@@ -62,6 +66,9 @@ input[type="text"], input[type="password"]{
 input[readonly]{
     background-color: dimgray;
     color:lightgrey;
+}
+input[readonly]:hover{
+    cursor:default;
 }
 .boton{
     color:white;
@@ -94,7 +101,7 @@ footer{
     /*position:fixed;
     bottom:0;*/
     width:100%;
-    height:5vh;
+    height:250px;
     margin-bottom: 0;
     flex-shrink: 0;
 }
@@ -106,7 +113,39 @@ footer{
     align-items: center;
     
 }
-/*PROVISIONAL*/
-footer img{
-    height:15px;
+.nombreygit{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.sauces{
+    height:15%;
+    border-top:solid #262625 1px;
+    background: black;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.contenidoFooter ul{
+    list-style: none;
+}
+.contenidoFooter ul li{
+    padding: 10px 0;
+}
+.contenidoFooter a{
+    text-decoration: none;
+    color: #8D7DFA;
+    font-family:Yantramanav;
+    font-size:16px;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+.contenidoFooter a:hover{
+    color:white;
+}
+.giturl{
+    height:25px;
+}
+.logoFooter{
+    height:75px;
 }

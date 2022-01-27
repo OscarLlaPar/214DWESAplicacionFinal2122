@@ -10,7 +10,7 @@
     require_once 'model/DBPDO.php';
     require_once 'model/AppError.php';
     require_once 'model/REST.php';
-    require_once 'model/LibroREST.php';
+    require_once 'model/Libro.php';
     
     // Configuración de la base de datos incluida
     require_once 'conf/confDB.php';

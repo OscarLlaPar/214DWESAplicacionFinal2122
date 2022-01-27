@@ -12,7 +12,7 @@
         * consultar libros introduciendo un título como parámetro.
         * 
         * @param String $sTitulo Título por el que hay que buscar un libro
-        * @return Array Un array formado de objetos LibroREST
+        * @return Array Un array formado de objetos Libro
         */
         public static function buscarLibrosPorTitulo($sTitulo){
             $resultadoAPI=@file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$sTitulo);
@@ -20,7 +20,7 @@
             $aResultadoAPI=json_decode($resultadoAPI,true);
             if($aResultadoAPI){
                 foreach($aResultadoAPI['items'] as $item){
-                array_push($aLibros, new LibroREST(
+                array_push($aLibros, new Libro(
                     $item['volumeInfo']['title'],
                     $item['volumeInfo']['authors']??"Autor desconocido", 
                     $item['volumeInfo']['publisher']??"Editorial desconocida",

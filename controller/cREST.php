@@ -39,6 +39,22 @@
         
         /*$resultadoAPI=file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$aRespuestas['busqueda']);
         $aResultadoAPI=json_decode($resultadoAPI,true);*/
+        
+        $aVistaREST=[];
+        $indice=0;
+        
+        foreach($aLibros as $libro){
+            $aVistaREST[$indice]['titulo']=$libro->getTitulo();
+            $aVistaREST[$indice]['autores']=$libro->getAutor();
+            $aVistaREST[$indice]['editorial']=$libro->getEditorial();
+            $aVistaREST[$indice]['anyoEdicion']=$libro->getAnyoEdicion();
+            $aVistaREST[$indice]['paginas']=$libro->getPaginas();
+            $aVistaREST[$indice]['imagen']=$libro->getImagen();
+            $aVistaREST[$indice]['link']=$libro->getLink();
+            
+            $indice++;
+        }
+        
     }
     
     /*print_r($aResultadoAPI["items"][0]);*/

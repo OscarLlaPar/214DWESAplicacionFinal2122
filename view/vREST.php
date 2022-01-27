@@ -20,23 +20,23 @@
             </form>
             <div class="resultado">
                 <?php
-                    if(isset($aLibros)){
-                        foreach($aLibros as $item){
+                    if(isset($aVistaREST)){
+                        foreach($aVistaREST as $libro){
                 ?>
                     <div class="libro">
                         <div class="imagen">
-                            <img src="<?php echo $item->getImagen(); ?>">
+                            <img src="<?php echo $libro['imagen']; ?>">
                         </div>
                         <div class="titulo">
-                            <h3><?php echo $item->getTitulo().", (".$item->getAnyoEdicion().")"; ?></h3>
+                            <h3><?php echo $libro['titulo'].", (".$libro['anyoEdicion'].")"; ?></h3>
                             <p>
                                 <?php
                                     
                                 ?>
                             </p>
-                            <p class="editorial"><?php echo $item->getEditorial(); ?></p>
-                            <p class="paginas"><?php echo $item->getPaginas(); ?> páginas</p>
-                            <a href="<?php echo $item->getLink(); ?>">Ver en Google Books &#62;&#62;</a>
+                            <p class="editorial"><?php echo $libro['editorial']; ?></p>
+                            <p class="paginas"><?php echo $libro['paginas']; ?> páginas</p>
+                            <a href="<?php echo $libro['link']; ?>">Ver en Google Books &#62;&#62;</a>
                         </div>
                     </div>
                 <?php

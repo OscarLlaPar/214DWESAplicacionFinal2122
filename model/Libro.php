@@ -1,12 +1,12 @@
 <?php
     /**
-    * Modelo: LibroREST
+    * Modelo: Libro
     * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
     * @since 26/01/2022 
     * @version 1.0 
     * Última modificación: 26/01/2022
     */
-    class LibroREST{
+    class Libro{
         private $titulo;
         private $autor;
         private $editorial;
