@@ -11,6 +11,9 @@
     require_once 'model/AppError.php';
     require_once 'model/REST.php';
     require_once 'model/Libro.php';
+    require_once 'model/Tiempo.php';
+    require_once 'model/Departamento.php';
+    require_once 'model/DepartamentoPDO.php';
     
     // Configuración de la base de datos incluida
     require_once 'conf/confDB.php';
@@ -27,6 +30,7 @@
         "borrarCuenta" => "controller/cBorrarCuenta.php",
         "cambiarPassword" => "controller/cCambiarPassword.php",
         "REST" => "controller/cREST.php",
+        "mtoDepartamentos" => "controller/cMtoDepartamentos.php",
         "WIP" => "controller/cWIP.php",
         "error" => "controller/cError.php"
     ];
@@ -42,6 +46,7 @@
         "borrarCuenta" => "view/vBorrarCuenta.php",
         "cambiarPassword" => "view/vCambiarPassword.php",
         "REST" => "view/vREST.php",
+        "mtoDepartamentos"=>"view/vMtoDepartamentos.php",
         "WIP" => "view/vWIP.php",
         "error" => "view/vError.php"
     ];

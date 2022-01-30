@@ -14,50 +14,69 @@
     }
     
     $aErrores=[
-        "busqueda" =>""
+        "busqueda" =>"",
+        "busquedaTiempo" =>""
     ];
     
     $aRespuestas=[
-        "busqueda" =>""
+        "busqueda" =>"",
+        "busquedaTiempo" =>""
     ];
     
     $bEntradaOK=true;
     if(isset($_REQUEST['buscar'])){
         $aErrores['busqueda']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['busqueda'], 255, 1);
-        if($aErrores['busqueda']!=""){
-            $bEntradaOK=false;
+        $aErrores['busquedaTiempo']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaTiempo'], 255, 1);
+        foreach($aErrores as $clave => $error){
+            //condición de que hay un error
+            if(($error)!=null){
+                $bEntradaOK=false;
+            }
         }
     }
     else{
         $bEntradaOK=false;
     }
     if($bEntradaOK){
-        $aRespuestas['busqueda']=$_REQUEST['busqueda'];
-        $aRespuestas['busqueda']=strtr($aRespuestas['busqueda'], " ", "-");
-        
-        $aLibros=REST::buscarLibrosPorTitulo($aRespuestas['busqueda']);
-        
-        /*$resultadoAPI=file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$aRespuestas['busqueda']);
-        $aResultadoAPI=json_decode($resultadoAPI,true);*/
-        
-        $aVistaREST=[];
-        $indice=0;
-        
-        foreach($aLibros as $libro){
-            $aVistaREST[$indice]['titulo']=$libro->getTitulo();
-            $aVistaREST[$indice]['autores']=$libro->getAutor();
-            $aVistaREST[$indice]['editorial']=$libro->getEditorial();
-            $aVistaREST[$indice]['anyoEdicion']=$libro->getAnyoEdicion();
-            $aVistaREST[$indice]['paginas']=$libro->getPaginas();
-            $aVistaREST[$indice]['imagen']=$libro->getImagen();
-            $aVistaREST[$indice]['link']=$libro->getLink();
+        if($_REQUEST['busqueda']!=""){
+            $aRespuestas['busqueda']=$_REQUEST['busqueda']??null;
+            $aRespuestas['busqueda']=strtr($aRespuestas['busqueda'], " ", "%20");
             
-            $indice++;
+            $aLibros=REST::buscarLibrosPorTitulo($aRespuestas['busqueda']);
+            
+            $aVistaLibros=[];
+            $indice=0;
+
+            foreach($aLibros as $libro){
+                $aVistaLibros[$indice]['titulo']=$libro->getTitulo();
+                $aVistaLibros[$indice]['autores']=$libro->getAutor();
+                $aVistaLibros[$indice]['editorial']=$libro->getEditorial();
+                $aVistaLibros[$indice]['anyoEdicion']=$libro->getAnyoEdicion();
+                $aVistaLibros[$indice]['paginas']=$libro->getPaginas();
+                $aVistaLibros[$indice]['imagen']=$libro->getImagen();
+                $aVistaLibros[$indice]['link']=$libro->getLink();
+
+                $indice++;
+            }
         }
-        
+        if($_REQUEST['busquedaTiempo']!=""){
+            $aRespuestas['busquedaTiempo']=$_REQUEST['busquedaTiempo']??null;
+            $aRespuestas['busquedaTiempo']=strtr($aRespuestas['busquedaTiempo'], " ", "+");
+
+            $oTiempo=REST::buscarTemperaturaPorCiudad($aRespuestas['busquedaTiempo']);
+            if($oTiempo){
+                $aVistaTiempo=[
+                    "ciudad"=>$oTiempo->getCiudad(),
+                    "pais"=>$oTiempo->getPais(),
+                    "fechaHora"=>$oTiempo->getFechaHora(),
+                    "icono"=>$oTiempo->getIcono(),
+                    "temperatura"=>$oTiempo->getTemperatura(),
+                    "descripcion"=>$oTiempo->getDescripcion()
+                ];
+            }
+        }
     }
     
-    /*print_r($aResultadoAPI["items"][0]);*/
     $vistaEnCurso = $aVistas['REST'];
     require_once "view/LayoutHeader.php";
     require_once $vistaEnCurso;

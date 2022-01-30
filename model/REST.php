@@ -8,7 +8,7 @@
     */
     class REST{
         /**
-        * Uso de la API REST  de Google Books mediante el protocolo HTML para 
+        * Uso de la API REST de Google Books mediante el protocolo HTML para 
         * consultar libros introduciendo un título como parámetro.
         * 
         * @param String $sTitulo Título por el que hay que buscar un libro
@@ -31,5 +31,32 @@
                 }
             }
             return $aLibros;
+        }
+        /**
+        * Uso de la API REST de WeatherStack (con credenciales)
+        * 
+        * @param String $sCiudad Nombre de la ciudad de la que se desea saber la temperatura
+        * @return Array Un array formado de objetos Libro
+        */
+        public static function buscarTemperaturaPorCiudad($sCiudad){
+            //http://api.weatherstack.com/current?acces_key=81fe86c10d6c6c35decbc53039e90c3f&query=New%20York
+            $claveAcceso="81fe86c10d6c6c35decbc53039e90c3f";
+            $resultadoAPI=@file_get_contents("http://api.weatherstack.com/current?access_key=".$claveAcceso."&query=".$sCiudad);
+            $aResultadoAPI=json_decode($resultadoAPI,true);
+            //var_dump($aResultadoAPI);
+            if(!isset($aResultadoAPI['success'])){
+                $oTiempo = new Tiempo(
+                        $aResultadoAPI['location']['name'],
+                        $aResultadoAPI['location']['country'],
+                        $aResultadoAPI['location']['localtime'],
+                        $aResultadoAPI['current']['weather_icons'][0],
+                        $aResultadoAPI['current']['temperature'],
+                        $aResultadoAPI['current']['weather_descriptions'][0]
+                );
+                return $oTiempo;
+            }
+            else{
+                return false;
+            }
         }
     }
