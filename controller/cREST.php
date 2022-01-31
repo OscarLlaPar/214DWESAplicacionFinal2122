@@ -39,28 +39,33 @@
     }
     if($bEntradaOK){
         if($_REQUEST['busqueda']!=""){
-            $aRespuestas['busqueda']=$_REQUEST['busqueda']??null;
+            $aRespuestas['busqueda']=$_REQUEST['busqueda'];
             $aRespuestas['busqueda']=strtr($aRespuestas['busqueda'], " ", "%20");
             
             $aLibros=REST::buscarLibrosPorTitulo($aRespuestas['busqueda']);
-            
-            $aVistaLibros=[];
-            $indice=0;
-
-            foreach($aLibros as $libro){
-                $aVistaLibros[$indice]['titulo']=$libro->getTitulo();
-                $aVistaLibros[$indice]['autores']=$libro->getAutor();
-                $aVistaLibros[$indice]['editorial']=$libro->getEditorial();
-                $aVistaLibros[$indice]['anyoEdicion']=$libro->getAnyoEdicion();
-                $aVistaLibros[$indice]['paginas']=$libro->getPaginas();
-                $aVistaLibros[$indice]['imagen']=$libro->getImagen();
-                $aVistaLibros[$indice]['link']=$libro->getLink();
-
-                $indice++;
+            if(!$aLibros){
+                $sMensaje = "Sin resultados";
             }
+            else{
+                $aVistaLibros=[];
+                $indice=0;
+
+                foreach($aLibros as $libro){
+                    $aVistaLibros[$indice]['titulo']=$libro->getTitulo();
+                    $aVistaLibros[$indice]['autores']=$libro->getAutor();
+                    $aVistaLibros[$indice]['editorial']=$libro->getEditorial();
+                    $aVistaLibros[$indice]['anyoEdicion']=$libro->getAnyoEdicion();
+                    $aVistaLibros[$indice]['paginas']=$libro->getPaginas();
+                    $aVistaLibros[$indice]['imagen']=$libro->getImagen();
+                    $aVistaLibros[$indice]['link']=$libro->getLink();
+
+                    $indice++;
+                }
+            }
+            
         }
         if($_REQUEST['busquedaTiempo']!=""){
-            $aRespuestas['busquedaTiempo']=$_REQUEST['busquedaTiempo']??null;
+            $aRespuestas['busquedaTiempo']=$_REQUEST['busquedaTiempo'];
             $aRespuestas['busquedaTiempo']=strtr($aRespuestas['busquedaTiempo'], " ", "+");
 
             $oTiempo=REST::buscarTemperaturaPorCiudad($aRespuestas['busquedaTiempo']);

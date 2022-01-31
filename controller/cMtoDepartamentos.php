@@ -1,6 +1,6 @@
 <?php
     
-
+    DBPDO::ejecutarConsulta("SELECT * FROM T02_Departamento");
 
     $vistaEnCurso = $aVistas['mtoDepartamentos'];
     require_once "view/LayoutHeader.php";

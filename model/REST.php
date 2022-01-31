@@ -18,19 +18,26 @@
             $resultadoAPI=@file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$sTitulo);
             $aLibros=[];
             $aResultadoAPI=json_decode($resultadoAPI,true);
-            if($aResultadoAPI){
-                foreach($aResultadoAPI['items'] as $item){
-                array_push($aLibros, new Libro(
-                    $item['volumeInfo']['title'],
-                    $item['volumeInfo']['authors']??"Autor desconocido", 
-                    $item['volumeInfo']['publisher']??"Editorial desconocida",
-                    $item['volumeInfo']['publishedDate']??"Año desconocido", 
-                    $item['volumeInfo']['pageCount']??"¿?", 
-                    $item['volumeInfo']['imageLinks']['thumbnail']??"webroot/img/nodisponible.jpg", 
-                    $item['volumeInfo']['infoLink'])); 
-                }
+            if(isset($aResultadoAPI['error'])){
+                return $aResultadoAPI['error']['message'];
             }
-            return $aLibros;
+            if($aResultadoAPI['totalItems']>0){
+                 foreach($aResultadoAPI['items'] as $item){
+                 array_push($aLibros, new Libro(
+                     $item['volumeInfo']['title'],
+                     $item['volumeInfo']['authors']??"Autor desconocido", 
+                     $item['volumeInfo']['publisher']??"Editorial desconocida",
+                     $item['volumeInfo']['publishedDate']??"Año desconocido", 
+                     $item['volumeInfo']['pageCount']??"¿?", 
+                     $item['volumeInfo']['imageLinks']['thumbnail']??"webroot/img/nodisponible.jpg", 
+                     $item['volumeInfo']['infoLink'])); 
+                 }
+                 return $aLibros;
+             }
+             else{
+                 return false;
+             } 
+            
         }
         /**
         * Uso de la API REST de WeatherStack (con credenciales)

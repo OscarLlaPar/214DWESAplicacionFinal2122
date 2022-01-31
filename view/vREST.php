@@ -11,20 +11,29 @@
                 <form action="index.php" method="post">
                     <div class="definirRest">
                         <h3>API REST de <strong>Google Books</strong></h3>
-                        <p>Servicio web que sirve para consultar un libro buscándolo por título</p>
+                        <p>
+                            Servicio web que sirve para consultar un libro. No necesariamente busca por título, pero es su prioridad.
+                            (p. ej. si buscas un autor primero mostrará libros en cuyo título esté su nombre).
+                            Puede buscar los carácteres introducidos en cualquier campo de su base de datos de libros.
+                        </p>
                         <a href="https://developers.google.com/books/docs/v1/getting_started" target="__blank">Más información &#62;&#62;</a>
-                        <br>
-                        <input name="busqueda" type="text" placeholder="Buscar..." value="<?php echo $_REQUEST['busqueda']??""?>">
-                        <button class="boton" name="buscar">Buscar</button>
+                        <div>
+                            <input name="busqueda" type="text" placeholder="Buscar..." value="<?php echo $_REQUEST['busqueda']??""?>">
+                            <button class="boton" name="buscar">Buscar</button>
+                        </div>
                     </div>
                     <div class="definirRest">
                         <h3>API REST de <strong>WeatherStack</strong></h3>
-                        <p></p>
+                        <p>
+                            Servicio web que permite consultar el tiempo de una ciudad al introducir su nombre (en inglés).
+                            Requiere autenticación de usuarios. El plan gratuito tiene un límite de 250 usos.
+                            En caso de que la ciudad sea homónima de otro país, tambien se puede especificar el país.
+                        </p>
                         <a href="https://weatherstack.com/documentation" target="__blank">Más información &#62;&#62;</a>
-                        <br>
-                        <input name="busquedaTiempo" type="text" placeholder="Buscar..." value="<?php echo $_REQUEST['busquedaTiempo']??""?>">
-                        
-                        <button class="boton" name="buscar">Buscar</button>
+                        <div>
+                            <input name="busquedaTiempo" type="text" placeholder="Buscar..." value="<?php echo $_REQUEST['busquedaTiempo']??""?>">
+                            <button class="boton" name="buscar">Buscar</button>
+                        </div>
                     </div>
                     <div class="botonVolver">
                         <button class="boton" name="volver">Volver</button>
