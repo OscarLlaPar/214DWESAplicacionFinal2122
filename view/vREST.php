@@ -41,6 +41,14 @@
                 </form>
                 <div class="resultado">
                     <?php
+                        if(isset($aErrorLibros)){
+                    ?>
+                        <div class="error">
+                            <p><?php echo $aErrorLibros[0] ?></p>
+                            <p><?php echo $aErrorLibros[1] ?></p>
+                        </div>
+                    <?php
+                        }
                         if(isset($aVistaLibros)){
                             foreach($aVistaLibros as $libro){
                     ?>
@@ -67,6 +75,14 @@
                 </div>
                 <div class="resultado">
                     <?php
+                        if(isset($aErrorTiempo)){
+                    ?>
+                        <div class="error">
+                            <p><?php echo $aErrorTiempo[0] ?></p>
+                            <p><?php echo $aErrorTiempo[1] ?></p>
+                        </div>
+                    <?php
+                        }
                         if(isset($aVistaTiempo)){
                     ?>
                         <div class="tiempo">

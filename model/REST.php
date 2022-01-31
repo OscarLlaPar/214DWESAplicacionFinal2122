@@ -51,7 +51,7 @@
             $resultadoAPI=@file_get_contents("http://api.weatherstack.com/current?access_key=".$claveAcceso."&query=".$sCiudad);
             $aResultadoAPI=json_decode($resultadoAPI,true);
             //var_dump($aResultadoAPI);
-            if(!isset($aResultadoAPI['success'])){
+            if(!isset($aResultadoAPI['error'])){
                 $oTiempo = new Tiempo(
                         $aResultadoAPI['location']['name'],
                         $aResultadoAPI['location']['country'],
@@ -63,7 +63,7 @@
                 return $oTiempo;
             }
             else{
-                return false;
+                return $aResultadoAPI['error']['info'];
             }
         }
     }

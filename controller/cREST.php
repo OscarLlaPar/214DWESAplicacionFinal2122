@@ -43,8 +43,11 @@
             $aRespuestas['busqueda']=strtr($aRespuestas['busqueda'], " ", "%20");
             
             $aLibros=REST::buscarLibrosPorTitulo($aRespuestas['busqueda']);
-            if(!$aLibros){
-                $sMensaje = "Sin resultados";
+            if(!is_array($aLibros)){
+                $aErrorLibros=[
+                    "Ha habido un error con la API",
+                    $aLibros
+                ];
             }
             else{
                 $aVistaLibros=[];
@@ -69,7 +72,7 @@
             $aRespuestas['busquedaTiempo']=strtr($aRespuestas['busquedaTiempo'], " ", "+");
 
             $oTiempo=REST::buscarTemperaturaPorCiudad($aRespuestas['busquedaTiempo']);
-            if($oTiempo){
+            if(is_object($oTiempo)){
                 $aVistaTiempo=[
                     "ciudad"=>$oTiempo->getCiudad(),
                     "pais"=>$oTiempo->getPais(),
@@ -77,6 +80,12 @@
                     "icono"=>$oTiempo->getIcono(),
                     "temperatura"=>$oTiempo->getTemperatura(),
                     "descripcion"=>$oTiempo->getDescripcion()
+                ];
+            }
+            else{
+                $aErrorTiempo=[
+                    "Ha habido un error con la API",
+                    $oTiempo
                 ];
             }
         }
