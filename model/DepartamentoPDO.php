@@ -8,13 +8,12 @@
     */
     class DepartamentoPDO{
         /**
-         * Comprobación de la existencia previa de un usuario y de si su contraseña
-         * es correcta en la base de datos.
+         * Búsqueda de un departamento introduciendo un código de departamento
+         * como parámetro
          * 
-         * @param String $codigoUsuario Código del usuario a comprobar.
-         * @param String $password Contraseña del usuario a comprobar.
-         * @return Object|boolean Devuelve el objeto únicamente con la FechaHoraUltimaConexion
-         * si el usuario existe y la contraseña es correcta, y false en caso contrario.
+         * @param String $codigoDepartamento Código del departamento a buscar.
+         * @return Object|boolean Devuelve un objeto Departamento.
+         * Si el departamento no existe, devuelve false.
          */
         public static function buscaDepartamentoPorCod($codigoDepartamento){
             /*
@@ -40,13 +39,12 @@
         }
         
         /**
-         * Comprobación de la existencia previa de un usuario y de si su contraseña
-         * es correcta en la base de datos.
+         * Búsqueda de un departamento introduciendo la descripción como
+         * parámetro
          * 
-         * @param String $codigoUsuario Código del usuario a comprobar.
-         * @param String $password Contraseña del usuario a comprobar.
-         * @return Object|boolean Devuelve el objeto únicamente con la FechaHoraUltimaConexion
-         * si el usuario existe y la contraseña es correcta, y false en caso contrario.
+         * @param String $descripcionDepartamento Descripción del departamento
+         * a buscar.
+         * @return PDOStatement Resultado del insert.
          */
         public static function buscaDepartamentosPorDesc($descripcionDepartamento){
             /*
@@ -61,13 +59,12 @@
         }
         
         /**
-         * Comprobación de la existencia previa de un usuario y de si su contraseña
-         * es correcta en la base de datos.
+         * Inserción de un departamento en la base de datos.
          * 
-         * @param String $codigoUsuario Código del usuario a comprobar.
-         * @param String $password Contraseña del usuario a comprobar.
-         * @return Object|boolean Devuelve el objeto únicamente con la FechaHoraUltimaConexion
-         * si el usuario existe y la contraseña es correcta, y false en caso contrario.
+         * @param String $codigoDepartamento Código del nuevo departamento.
+         * @param String $descripcionDepartamento Descripción del nuevo departamento.
+         * @param Integer $volumenNegocio Volumen de negocio del nuevo departamento.
+         * @return PDOStatement Resultado del insert.
          */
         public static function altaDepartamento($codigoDepartamento, $descripcionDepartamento, $volumenNegocio){
             /*
@@ -75,7 +72,7 @@
              */
             $sInsert = <<<QUERY
                 INSERT INTO T02_Departamento(T02_CodDepartamento, T02_DescDepartamento, T02_FechaCreacionDepartamento, T02_VolumenDeNegocio) VALUES
-                ("{$codigoDepartamento}", "{$descripcionDepartamento}", UNIX_TIMESTAMP(), "{$volumenNegocio}");
+                ("{$codigoDepartamento}", "{$descripcionDepartamento}", UNIX_TIMESTAMP(), {$volumenNegocio});
             QUERY;
 
             return DBPDO::ejecutarConsulta($sInsert);
@@ -87,8 +84,7 @@
          * 
          * @param String $codigoUsuario Código del usuario a comprobar.
          * @param String $password Contraseña del usuario a comprobar.
-         * @return Object|boolean Devuelve el objeto únicamente con la FechaHoraUltimaConexion
-         * si el usuario existe y la contraseña es correcta, y false en caso contrario.
+         * @return PDOStatement Resultado del insert.
          */
         public static function bajaFisicaDepartamento($oDepartamento){
             $sDelete = <<<QUERY
@@ -107,13 +103,14 @@
         }
         
         /**
-         * Comprobación de la existencia previa de un usuario y de si su contraseña
-         * es correcta en la base de datos.
+         * Modificación de un departamento existente introduciendo los parámetros
+         * editables.
          * 
-         * @param String $codigoUsuario Código del usuario a comprobar.
-         * @param String $password Contraseña del usuario a comprobar.
-         * @return Object|boolean Devuelve el objeto únicamente con la FechaHoraUltimaConexion
-         * si el usuario existe y la contraseña es correcta, y false en caso contrario.
+         * @param Object Objeto Departamento que se desea modificar.
+         * @param String $descripciónDepartamento Nueva descripción del departamento.
+         * @param Integer $volumenNegocio Nuevo valor del volumen de negocio del departamento.
+         * @return Object|boolean Devuelve un objeto Departamento con los valores nuevos o
+         * false si no se realiza la consulta sobre la base de datos.
          */
         public static function modificaDepartamento($oDepartamento, $descripcionDepartamento, $volumenNegocio){
             $oDepartamento->setDescDepartamento($descripcionDepartamento);
@@ -121,7 +118,7 @@
             
             $sUpdate = <<<QUERY
                 UPDATE T02_Departamento SET T02_DescDepartamento = "{$oDepartamento->getDescDepartamento()}",
-                T02_VolumenNegocio = '{$oDepartamento->getVolumenDeNegocio()}'
+                T02_VolumenNegocio = {$oDepartamento->getVolumenDeNegocio()}
                 WHERE T01_CodUsuario = "{$oDepartamento->getCodUsuario()}";
             QUERY;
 
@@ -143,13 +140,11 @@
         }
         
         /**
-         * Comprobación de la existencia previa de un usuario y de si su contraseña
-         * es correcta en la base de datos.
+         * Comprobación de que un código de un departamento no existe ya en la
+         * base de datos.
          * 
-         * @param String $codigoUsuario Código del usuario a comprobar.
-         * @param String $password Contraseña del usuario a comprobar.
-         * @return Object|boolean Devuelve el objeto únicamente con la FechaHoraUltimaConexion
-         * si el usuario existe y la contraseña es correcta, y false en caso contrario.
+         * @param String $codigoDepartamento Código del departamento a comprobar.
+         * @return PDOStatement Resultado del insert.
          */
         public static function validaCodNoExiste($codigoDepartamento){
             $sSelect = <<<QUERY

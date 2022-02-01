@@ -68,7 +68,8 @@ main{
     padding:20px;
     display:flex;
     flex-flow:column;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    gap:50px;
 }
 .textoDiagrama h2{
     font-size:40px;
@@ -81,9 +82,17 @@ main{
 }
 .imagenDiagrama{
     width:40%;
+    overflow:hidden;
 }
 .imagenDiagrama img{
-    width:100%;
+    width:110%;
+    height:110%;
+    transition: all 0.5s ease;
+}
+.imagenDiagrama img:hover{
+    width:125%;
+    height:125%;
+    opacity:0.5;
 }
 .diagrama:nth-child(2n){
     background-color:white;
