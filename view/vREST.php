@@ -7,7 +7,7 @@
     </head>
     <body>
         <main class="mainRest">
-                
+            <h2>APIs REST</h2>
                 <form action="index.php" method="post">
                     <div class="definirRest">
                         <h3>API REST de <strong>Google Books</strong></h3>
@@ -18,8 +18,10 @@
                         </p>
                         <a href="https://developers.google.com/books/docs/v1/getting_started" target="__blank">Más información &#62;&#62;</a>
                         <div>
-                            <input name="busqueda" type="text" placeholder="Buscar..." value="<?php echo $_REQUEST['busqueda']??""?>">
+                            <input name="busqueda" type="text" placeholder="Buscar título..." value="<?php echo $_REQUEST['busqueda']??""?>">
                             <button class="boton" name="buscar">Buscar</button>
+                            <br>
+                            <p class="errorValidacion"><?php echo $aErrores['busqueda'] ?></p>
                         </div>
                     </div>
                     <div class="definirRest">
@@ -31,8 +33,10 @@
                         </p>
                         <a href="https://weatherstack.com/documentation" target="__blank">Más información &#62;&#62;</a>
                         <div>
-                            <input name="busquedaTiempo" type="text" placeholder="Buscar..." value="<?php echo $_REQUEST['busquedaTiempo']??""?>">
+                            <input name="busquedaTiempo" type="text" placeholder="Buscar ciudad..." value="<?php echo $_REQUEST['busquedaTiempo']??""?>">
                             <button class="boton" name="buscar">Buscar</button>
+                            <br>
+                            <p class="errorValidacion"><?php echo $aErrores['busquedaTiempo'] ?></p>
                         </div>
                     </div>
                     <div class="botonVolver">

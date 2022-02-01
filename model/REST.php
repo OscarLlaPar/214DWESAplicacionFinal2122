@@ -18,8 +18,8 @@
             $resultadoAPI=@file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$sTitulo);
             $aLibros=[];
             $aResultadoAPI=json_decode($resultadoAPI,true);
-            if(isset($aResultadoAPI['error'])){
-                return $aResultadoAPI['error']['message'];
+            if(is_null($aResultadoAPI)){
+                return "No se ha podido establecer la conexión";
             }
             if($aResultadoAPI['totalItems']>0){
                  foreach($aResultadoAPI['items'] as $item){

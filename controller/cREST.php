@@ -26,7 +26,7 @@
     $bEntradaOK=true;
     if(isset($_REQUEST['buscar'])){
         $aErrores['busqueda']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['busqueda'], 255, 1);
-        $aErrores['busquedaTiempo']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaTiempo'], 255, 1);
+        $aErrores['busquedaTiempo']= validacionFormularios::comprobarAlfabetico($_REQUEST['busquedaTiempo'], 255, 1);
         foreach($aErrores as $clave => $error){
             //condición de que hay un error
             if(($error)!=null){
