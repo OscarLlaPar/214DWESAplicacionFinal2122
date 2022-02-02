@@ -28,7 +28,7 @@
             $oDatos = $oResultado->fetchObject();
             
             if($oDatos){
-                return new Usuario($oDatos->T01_CodDepartamento, $oDatos->T02_DescDepartamento, $oDatos->T02_FechaCreacionDepartamento, $oDatos->T02_VolumenDeNegocio, $oDatos->T02_FechaBajaDepartamento);
+                return new Departamento($oDatos->T02_CodDepartamento, $oDatos->T02_DescDepartamento, $oDatos->T02_FechaCreacionDepartamento, $oDatos->T02_VolumenDeNegocio, $oDatos->T02_FechaBajaDepartamento);
             }
             /*
              * Si no existe, devuelve false.
@@ -52,7 +52,7 @@
              */
             $sSelect = <<<QUERY
                 SELECT * FROM T02_Departamento
-                WHERE T02_DescDepartamento='{$descripcionDepartamento}';
+                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%';
             QUERY;
 
             return DBPDO::ejecutarConsulta($sSelect);
