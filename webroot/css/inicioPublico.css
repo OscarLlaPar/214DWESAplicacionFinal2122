@@ -64,7 +64,7 @@ main{
     display:flex;
 }
 .textoDiagrama{
-    width:60%;
+    width:40%;
     padding:20px;
     display:flex;
     flex-flow:column;
@@ -81,17 +81,17 @@ main{
     height:100%;
 }
 .imagenDiagrama{
-    width:40%;
+    width:60%;
     overflow:hidden;
 }
 .imagenDiagrama img{
     width:110%;
-    height:110%;
+    height:175%;
     transition: all 0.5s ease;
 }
 .imagenDiagrama img:hover{
-    width:125%;
-    height:125%;
+    width:150%;
+    height:200%;
     opacity:0.5;
 }
 .diagrama:nth-child(2n){

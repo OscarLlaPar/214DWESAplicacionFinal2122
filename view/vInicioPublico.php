@@ -10,6 +10,7 @@
                     <button type="submit" name="login" class="boton">Log in</button>
                 </form>
             </div>
+            <!--
             <div class="enlaces">
                 <div class="tarjeta">
                     <p>Catálogo de Requisitos</p>
@@ -24,6 +25,7 @@
                     <a href="doc/220111UsoDeLaSessionParaLaAplicación.pdf" target="__blank">Ver documento</a>
                 </div>
             </div>
+            -->
         </main>
         <div class="diagramas">
             <div class="diagrama">
@@ -99,6 +101,30 @@
                 </div>
                 <div class="imagenDiagrama">
                     <a href="webroot/img/diagramaRelacionFicheros.JPG" target="__blank"><img src="webroot/img/diagramaRelacionFicheros.JPG"></a>
+                </div>
+            </div>
+            <div class="diagrama">
+                <div class="textoDiagrama">
+                    <h2>Catálogo de requisitos</h2>
+                </div>
+                <div class="imagenDiagrama">
+                    <a href="doc/220119CatalogoDeRequisitos.pdf" target="__blank"><img src="webroot/img/catalogoRequisitos.jpg"></a>
+                </div>
+            </div>
+            <div class="diagrama">
+                <div class="textoDiagrama">
+                    <h2>Estándares de desarrollo</h2>
+                </div>
+                <div class="imagenDiagrama">
+                    <a href="doc/211129EstandarDesarrolloDAWyEstructuraAlmacenamientoDWES.pdf" target="__blank"><img src="webroot/img/estandarDesarrollo.jpg"></a>
+                </div>
+            </div>
+            <div class="diagrama">
+                <div class="textoDiagrama">
+                    <h2>Uso de $_SESSION</h2>
+                </div>
+                <div class="imagenDiagrama">
+                    <a href="doc/220111UsoDeLaSessionParaLaAplicación.pdf" target="__blank"><img src="webroot/img/usoSession.jpg"></a>
                 </div>
             </div>
         </div>

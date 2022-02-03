@@ -9,6 +9,7 @@
                     <li><a href="#">Documentación</a></li>
                     <li><a href="#">Currículum del autor</a></li>
                     <li><a href="https://devonstank.com/" target="__blank">Web imitada</a></li>
+                    <li><a href="#">RSS</a></li>
                 </ul>
             </div>
             <div class="sauces">
