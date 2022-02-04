@@ -12,6 +12,7 @@ Aplicación final del curso DAW2 2021-2022. LoginLogout, mantenimiento de depart
 - Cambiar contraseña
 - API REST de Google Books - Buscar libros por título
 - API REST de Weather Shark - Consultar el clima incluyendo una ciudad
+- API REST propia - Búsqueda de departamento por código
 - Consulta de diagramas
 - Búsqueda de departamentos por descripción
 
