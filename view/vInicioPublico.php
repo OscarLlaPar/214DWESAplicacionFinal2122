@@ -10,6 +10,7 @@
                     <button type="submit" name="login" class="boton">Log in</button>
                 </form>
             </div>
+            <!--
             <div class="enlaces">
                 <div class="tarjeta">
                     <p>Catálogo de Requisitos</p>
@@ -24,6 +25,7 @@
                     <a href="doc/220111UsoDeLaSessionParaLaAplicación.pdf" target="__blank">Ver documento</a>
                 </div>
             </div>
+            -->
         </main>
         <div class="diagramas">
             <div class="diagrama">
@@ -42,10 +44,9 @@
                         <li>Color azul claro: Páginas que puede ver el usuario no registrado o identificado.</li>
                         <li>Color azul oscuro: Páginas comunes a toda la aplicación. Ej: Página que muestra un error.</li>
                     </ul>
-                    <a href="webroot/img/diagramaArbolNavegacion.JPG" target="__blank">Ver imagen &#62;&#62;</a>
                 </div>
                 <div class="imagenDiagrama">
-                    <img src="webroot/img/diagramaArbolNavegacion.JPG">
+                    <a href="webroot/img/diagramaArbolNavegacion.JPG" target="__blank"><img src="webroot/img/diagramaArbolNavegacion.JPG"></a>
                 </div>
             </div>
             <div class="diagrama">
@@ -63,10 +64,9 @@
                         <li>Usuario identificado: Representado con el color azul.</li>
                         <li>Usuario administrador: Representado con el color rojo.</li>
                     </ul>
-                    <a href="webroot/img/diagramaCasosUso.JPG" target="__blank">Ver imagen &#62;&#62;</a>
                 </div>
                 <div class="imagenDiagrama">
-                    <img src="webroot/img/diagramaCasosUso.JPG">
+                    <a href="webroot/img/diagramaCasosUso.JPG" target="__blank"><img src="webroot/img/diagramaCasosUso.JPG"></a>
                 </div>
             </div>
             <div class="diagrama">
@@ -76,10 +76,9 @@
                         Representa las clases e interfaces que se han utilizado en el
                         modelo para desarrollar la aplicación, así como sus métodos.
                     </p>
-                    <a href="webroot/img/diagramaClases.JPG" target="__blank">Ver imagen &#62;&#62;</a>
                 </div>
                 <div class="imagenDiagrama">
-                    <img src="webroot/img/diagramaClases.JPG">
+                    <a href="webroot/img/diagramaClases.JPG" target="__blank"><img src="webroot/img/diagramaClases.JPG"></a>
                 </div>
             </div>
             <div class="diagrama">
@@ -99,10 +98,33 @@
                         Cada fichero del modelo es una clase o una interface. La
                         clase DBPDO tiene acceso a la base de datos.
                     </p>
-                    <a href="webroot/img/diagramaRelacionFicheros.JPG" target="__blank">Ver imagen &#62;&#62;</a>
                 </div>
                 <div class="imagenDiagrama">
-                    <img src="webroot/img/diagramaRelacionFicheros.JPG">
+                    <a href="webroot/img/diagramaRelacionFicheros.JPG" target="__blank"><img src="webroot/img/diagramaRelacionFicheros.JPG"></a>
+                </div>
+            </div>
+            <div class="diagrama">
+                <div class="textoDiagrama">
+                    <h2>Catálogo de requisitos</h2>
+                </div>
+                <div class="imagenDiagrama">
+                    <a href="doc/220119CatalogoDeRequisitos.pdf" target="__blank"><img src="webroot/img/catalogoRequisitos.jpg"></a>
+                </div>
+            </div>
+            <div class="diagrama">
+                <div class="textoDiagrama">
+                    <h2>Estándares de desarrollo</h2>
+                </div>
+                <div class="imagenDiagrama">
+                    <a href="doc/211129EstandarDesarrolloDAWyEstructuraAlmacenamientoDWES.pdf" target="__blank"><img src="webroot/img/estandarDesarrollo.jpg"></a>
+                </div>
+            </div>
+            <div class="diagrama">
+                <div class="textoDiagrama">
+                    <h2>Uso de $_SESSION</h2>
+                </div>
+                <div class="imagenDiagrama">
+                    <a href="doc/220111UsoDeLaSessionParaLaAplicación.pdf" target="__blank"><img src="webroot/img/usoSession.jpg"></a>
                 </div>
             </div>
         </div>

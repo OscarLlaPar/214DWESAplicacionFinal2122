@@ -7,6 +7,7 @@
     </head>
     <body>
         <main class="detalle">
+            <h2>Detalle</h2>
             <form action="index.php">
                 <button type="submit" name="volver" class="boton">Volver</button>
             </form>

@@ -1,0 +1,46 @@
+.departamentos{
+    width:100%;
+    display:flex;
+    flex-flow:row-wrap;
+    gap:10px;
+    padding:15px;
+    
+}
+form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap:25px;
+}
+.departamento{
+    background-color: black;
+    border-left: solid dimgrey 5px;
+    border-top: solid dimgrey 1px;
+    border-bottom: solid dimgrey 1px;
+    border-right: solid dimgrey 1px;
+    padding:10px;
+}
+.botones{
+    display:flex;
+}
+.departamento .boton{
+    margin:10px;
+    height:50px;
+    width:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.departamento .boton img{
+    height:25px;
+    width:25px;
+}
+h3{
+    font-size:24px;
+    font-family:Amiri;
+    font-weight: lighter;
+}
+.codigo{
+    font-weight:bold;
+    color: #8D7DFA;
+}
