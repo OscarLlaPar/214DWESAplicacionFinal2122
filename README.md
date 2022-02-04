@@ -11,7 +11,9 @@ Aplicación final del curso DAW2 2021-2022. LoginLogout, mantenimiento de depart
 - Borrar cuenta
 - Cambiar contraseña
 - API REST de Google Books - Buscar libros por título
+- API REST de Weather Shark - Consultar el clima incluyendo una ciudad
 - Consulta de diagramas
+- Búsqueda de departamentos por descripción
 
 ### Software utilizado
 - Ubuntu Server 20.04.3
