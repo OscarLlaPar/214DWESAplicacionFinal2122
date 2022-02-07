@@ -62,7 +62,7 @@
         
         if(UsuarioPDO::altaUsuario($aRespuestas['usuario'], $aRespuestas['password'], $aRespuestas['descripcion'])){
             $oUsuarioValido = UsuarioPDO::validarUsuario($aRespuestas['usuario'], $aRespuestas['password']);
-            $_SESSION['usuario214DWESAplicacionLoginLogout'] = $oUsuarioValido;
+            $_SESSION['usuario214DWESAplicacionFinal2122'] = $oUsuarioValido;
             $_SESSION['paginaEnCurso'] = 'inicioPrivado';
         }
         header('Location: index.php');

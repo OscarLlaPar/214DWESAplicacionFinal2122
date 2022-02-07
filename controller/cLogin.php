@@ -51,7 +51,7 @@
             $aRespuestas['password'] = $_REQUEST['password'];
         
             if(UsuarioPDO::registrarUltimaConexion($oUsuarioValido)){
-                $_SESSION['usuario214DWESAplicacionLoginLogout'] = $oUsuarioValido;
+                $_SESSION['usuario214DWESAplicacionFinal2122'] = $oUsuarioValido;
                 $_SESSION['paginaEnCurso'] = 'inicioPrivado';
             }
             header('Location: index.php');

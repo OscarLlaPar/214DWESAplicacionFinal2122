@@ -15,6 +15,13 @@
         exit;
     }
     
+    if(isset($_REQUEST['mtoUsuarios'])){
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso'] = 'WIP';
+        header('Location: index.php');
+        exit;
+    }
+    
     if(isset($_REQUEST['mtoDepartamentos'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'mtoDepartamentos';
@@ -48,10 +55,10 @@
     
     // Array con la información de la vista.
     $aVistaInicioPrivado = [
-        'descUsuario' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getDescUsuario(),
-        'numConexiones' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getNumAccesos(),
-        'fechaHoraUltimaConexion' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getFechaHoraUltimaConexionAnterior(),
-        'imagenUsuario' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getImagenUsuario()
+        'descUsuario' => $_SESSION['usuario214DWESAplicacionFinal2122']->getDescUsuario(),
+        'numConexiones' => $_SESSION['usuario214DWESAplicacionFinal2122']->getNumAccesos(),
+        'fechaHoraUltimaConexion' => $_SESSION['usuario214DWESAplicacionFinal2122']->getFechaHoraUltimaConexionAnterior(),
+        'imagenUsuario' => $_SESSION['usuario214DWESAplicacionFinal2122']->getImagenUsuario()
     ];
     
     $vistaEnCurso = $aVistas['inicioPrivado'];

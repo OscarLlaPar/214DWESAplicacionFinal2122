@@ -66,4 +66,22 @@
                 return $aResultadoAPI['error']['info'];
             }
         }
+        
+        public static function buscarDepartamentoPorCod($sCodDepartamento){
+            $resultadoAPI=@file_get_contents("http://daw214.sauces.local/214DWESAplicacionFinal2122/api/consultaDepartamentoPorCodigo.php?codDepartamento=".$sCodDepartamento);
+            $aResultadoAPI=json_decode($resultadoAPI,true);
+            if($aResultadoAPI['respuestaOK']){
+                $oDepartamento=new Departamento(
+                            $aResultadoAPI['departamento']['codDepartamento'],
+                            $aResultadoAPI['departamento']['descDepartamento'],
+                            $aResultadoAPI['departamento']['fechaCreacionDepartamento'],
+                            $aResultadoAPI['departamento']['volumenDeNegocio'],
+                            $aResultadoAPI['departamento']['fechaBajaDepartamento']
+                        );
+                return $oDepartamento;
+            }
+            else{
+                return $aResultadoAPI['error'];
+            }
+        }
     }

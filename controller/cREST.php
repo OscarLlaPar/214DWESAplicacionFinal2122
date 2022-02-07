@@ -15,17 +15,31 @@
     
     $aErrores=[
         "busqueda" =>"",
-        "busquedaTiempo" =>""
+        "busquedaTiempo" =>"",
+        "busquedaDepartamento" =>""
     ];
     
     $aRespuestas=[
         "busqueda" =>"",
-        "busquedaTiempo" =>""
+        "busquedaTiempo" =>"",
+        "busquedaDepartamento" =>""
     ];
     
     $bEntradaOK=true;
     if(isset($_REQUEST['buscar'])){
+        $_REQUEST['busquedaTiempo']="";
+        $_REQUEST['busquedaDepartamento']="";
         $aErrores['busqueda']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['busqueda'], 255, 1);
+        foreach($aErrores as $clave => $error){
+            //condición de que hay un error
+            if(($error)!=null){
+                $bEntradaOK=false;
+            }
+        }
+    }
+    if(isset($_REQUEST['buscarTiempo'])){
+        $_REQUEST['busqueda']="";
+        $_REQUEST['busquedaDepartamento']="";
         $aErrores['busquedaTiempo']= validacionFormularios::comprobarAlfabetico($_REQUEST['busquedaTiempo'], 255, 1);
         foreach($aErrores as $clave => $error){
             //condición de que hay un error
@@ -34,7 +48,18 @@
             }
         }
     }
-    else{
+    if(isset($_REQUEST['buscarDepartamento'])){
+        $_REQUEST['busquedaTiempo']="";
+        $_REQUEST['busqueda']="";
+        $aErrores['busquedaDepartamento']= validacionFormularios::comprobarAlfabetico($_REQUEST['busquedaDepartamento'], 255, 1);
+        foreach($aErrores as $clave => $error){
+            //condición de que hay un error
+            if(($error)!=null){
+                $bEntradaOK=false;
+            }
+        }
+    }
+    else if(!isset ($_REQUEST['buscar'])&&!isset ($_REQUEST['buscarTiempo'])&&!isset ($_REQUEST['buscarDepartamento'])){
         $bEntradaOK=false;
     }
     if($bEntradaOK){
@@ -88,6 +113,26 @@
                     $oTiempo
                 ];
             }
+        }
+        if($_REQUEST['busquedaDepartamento']!=""){
+            $aRespuestas['busquedaDepartamento']=$_REQUEST['busquedaDepartamento'];
+            
+            $oDepartamento= REST::buscarDepartamentoPorCod($aRespuestas['busquedaDepartamento']);
+            if(is_object($oDepartamento)){
+                $aVistaDepartamento=[
+                    "codDepartamento"=>$oDepartamento->getCodDepartamento(),
+                    "descDepartamento"=>$oDepartamento->getDescDepartamento(),
+                    "fechaCreacionDepartamento"=>$oDepartamento->getFechaCreacionDepartamento(),
+                    "volumenDeNegocio"=>$oDepartamento->getVolumenDeNegocio(),
+                    "fechaBajaDepartamento"=>$oDepartamento->getFechaBajaDepartamento(),
+                ];
+            }
+            else{
+                $aErrorDepartamento=[
+                    $oDepartamento
+                ];
+            }
+            
         }
     }
     

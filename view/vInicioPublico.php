@@ -105,6 +105,14 @@
             </div>
             <div class="diagrama">
                 <div class="textoDiagrama">
+                    <h2>Modelo Físico de Datos</h2>
+                </div>
+                <div class="imagenDiagrama">
+                    <a href="webroot/img/modeloFisico.jpg" target="__blank"><img src="webroot/img/modeloFisico.jpg"></a>
+                </div>
+            </div>
+            <div class="diagrama">
+                <div class="textoDiagrama">
                     <h2>Catálogo de requisitos</h2>
                 </div>
                 <div class="imagenDiagrama">
