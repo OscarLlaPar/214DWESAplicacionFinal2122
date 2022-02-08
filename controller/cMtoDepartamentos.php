@@ -1,8 +1,29 @@
 <?php
     
     if(isset($_REQUEST['volver'])){
-        $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-        $_SESSION['paginaAnterior']='mtoDepartamentos';
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='inicioPrivado';
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['altaDepartamento'])){
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='altaDepartamento';
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['bajaLogica'])){
+        DepartamentoPDO::bajaLogicaDepartamento($_REQUEST['bajaLogica']);
+        
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['rehabilitar'])){
+        DepartamentoPDO::rehabilitaDepartamento($_REQUEST['rehabilitar']);
+        
         header('Location: index.php');
         exit;
     }

@@ -13,6 +13,13 @@
         exit;
     }
     
+    if(isset($_REQUEST['info'])){
+        $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='infoREST';
+        header('Location: index.php');
+        exit;
+    }
+    
     $aErrores=[
         "busqueda" =>"",
         "busquedaTiempo" =>"",

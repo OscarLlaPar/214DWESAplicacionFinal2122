@@ -162,3 +162,16 @@ form{
     color: #EB3755;
     padding:10px;
 }
+.info{
+    border:none;
+    background:transparent;
+    transition: all 0.5s ease;
+}
+.info:hover{
+    cursor:pointer;
+    filter: invert(0.4) sepia(1) hue-rotate(-150deg) saturate(700%);
+}
+.info img{
+    width:25px;
+    height:25px;
+}

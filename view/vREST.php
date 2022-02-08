@@ -15,6 +15,7 @@
                     <div class="apisRest">
                         <div class="definirRest">
                             <h3>API REST propia</h3>
+                            <button class="info" name="info" value="departamentos"><img src="webroot/img/info.png"></button>
                             <p>
                                 Sirve para consultar un departamento introduciendo su código. El código
                                 de un departamento está formado por tres letras mayúsculas.
@@ -28,6 +29,7 @@
                         </div>
                         <div class="definirRest">
                             <h3>API REST de <strong>WeatherStack</strong></h3>
+                            <button class="info" name="info" value="weatherStack"><img src="webroot/img/info.png"></button>
                             <p>
                                 Servicio web que permite consultar el tiempo de una ciudad al introducir su nombre (en inglés).
                                 Requiere autenticación de usuarios. El plan gratuito tiene un límite de 250 usos.
@@ -43,6 +45,7 @@
                         </div>
                         <div class="definirRest">
                             <h3>API REST de <strong>Google Books</strong></h3>
+                            <button class="info" name="info" value="googleBooks"><img src="webroot/img/info.png"></button>
                             <p>
                                 Servicio web que sirve para consultar un libro. No necesariamente busca por título, pero es su prioridad.
                                 (p. ej. si buscas un autor primero mostrará libros en cuyo título esté su nombre).

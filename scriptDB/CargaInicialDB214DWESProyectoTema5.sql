@@ -17,6 +17,6 @@ insert into T01_Usuario values
 ('albertoB',SHA2('albertoBpaso',256),'AlbertoB', null, 0, 'usuario', null);
 
 insert into T02_Departamento values
-("UNO", "Primer departamento", curdate(), 30.45, null),
-("DOS", "Segundo departamento", curdate(), 66.66, null),
-("TRE", "Tercer departamento", curdate(), 1.11, null);
+("UNO", "Primer departamento", UNIX_TIMESTAMP(), 30.45, null),
+("DOS", "Segundo departamento", UNIX_TIMESTAMP(), 66.66, null),
+("TRE", "Tercer departamento", UNIX_TIMESTAMP(), 1.11, null);

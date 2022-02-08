@@ -1,10 +1,17 @@
-.departamentos{
-    width:100%;
-    display:flex;
-    flex-flow:row-wrap;
-    gap:10px;
-    padding:15px;
+.tablaDepartamentos{
+    width:90%;
+    background:black;
+    text-align:center;
+    font-size:20px;
     
+}
+.tablaDepartamentos,td,th{
+    border:solid white 1px;
+    border-collapse: collapse;
+}
+th:nth-last-child(-n+4), td:nth-last-child(-n+4){
+    width:25px;
+    border:none;
 }
 form{
     display: flex;
@@ -12,24 +19,8 @@ form{
     align-items: center;
     gap:25px;
 }
-.departamento{
-    background-color: black;
-    border-left: solid dimgrey 5px;
-    border-top: solid dimgrey 1px;
-    border-bottom: solid dimgrey 1px;
-    border-right: solid dimgrey 1px;
-    padding:10px;
-}
 .botones{
     display:flex;
-}
-.departamento .boton{
-    margin:10px;
-    height:50px;
-    width:50px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
 }
 .departamento .boton img{
     height:25px;
@@ -43,4 +34,11 @@ h3{
 .codigo{
     font-weight:bold;
     color: #8D7DFA;
+}
+.baja{
+    background-color:#87012B;
+    color:grey;
+}
+.baja .codigo{
+    color:grey;
 }

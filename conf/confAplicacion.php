@@ -30,7 +30,9 @@
         "borrarCuenta" => "controller/cBorrarCuenta.php",
         "cambiarPassword" => "controller/cCambiarPassword.php",
         "REST" => "controller/cREST.php",
+        "infoREST" => "controller/cInfoREST.php",
         "mtoDepartamentos" => "controller/cMtoDepartamentos.php",
+        "altaDepartamento" => "controller/cAltaDepartamento.php",
         "WIP" => "controller/cWIP.php",
         "error" => "controller/cError.php"
     ];
@@ -46,7 +48,9 @@
         "borrarCuenta" => "view/vBorrarCuenta.php",
         "cambiarPassword" => "view/vCambiarPassword.php",
         "REST" => "view/vREST.php",
+        "infoREST" => "view/vInfoREST.php",
         "mtoDepartamentos"=>"view/vMtoDepartamentos.php",
+        "altaDepartamento"=>"view/vAltaDepartamento.php",
         "WIP" => "view/vWIP.php",
         "error" => "view/vError.php"
     ];

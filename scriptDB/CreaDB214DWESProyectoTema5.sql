@@ -25,7 +25,7 @@ create table if not exists T01_Usuario(
 create table if not exists T02_Departamento(
     T02_CodDepartamento varchar(3) primary key not null,
     T02_DescDepartamento varchar(255) not null,
-    T02_FechaCreacionDepartamento date not null,
+    T02_FechaCreacionDepartamento int not null,
     T02_VolumenDeNegocio decimal(6,2) not null,
-    T02_FechaBajaDepartamento date
+    T02_FechaBajaDepartamento int
 )engine=InnoDB;

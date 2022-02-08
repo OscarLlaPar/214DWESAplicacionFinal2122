@@ -96,10 +96,18 @@
         }
         
         /**
+         * Baja lógica de un departamento estableciendo una fecha de baja.
          * 
+         * @param String $sCodDepartamento Código del departamento al que establecer la baja.
+         * @return PDOStatement Resultado del update.
          */
-        public static function bajaLogicaDepartamento(){
-            
+        public static function bajaLogicaDepartamento($sCodDepartamento){
+            $sUpdate = <<<QUERY
+                UPDATE T02_Departamento SET T02_FechaBajaDepartamento = UNIX_TIMESTAMP()
+                WHERE T02_CodDepartamento= '{$sCodDepartamento}';
+                QUERY;
+                
+            return DBPDO::ejecutarConsulta($sUpdate);
         }
         
         /**
@@ -133,10 +141,17 @@
         }
         
         /**
+         * Rehabilitación de un departamento eliminando su fecha de baja.
          * 
+         * @param String $sCodDepartamento Código del departamento al que rehabilitar.
+         * @return PDOStatement Resultado del update.
          */
-        public static function rehabilitaDepartamento(){
-            
+        public static function rehabilitaDepartamento($sCodDepartamento){
+            $sUpdate = <<<QUERY
+                UPDATE T02_Departamento SET T02_FechaBajaDepartamento = null
+                WHERE T02_CodDepartamento= '{$sCodDepartamento}';
+                QUERY;
+            return DBPDO::ejecutarConsulta($sUpdate);
         }
         
         /**
