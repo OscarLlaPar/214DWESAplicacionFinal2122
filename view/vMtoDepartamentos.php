@@ -10,13 +10,20 @@
             
             <form action="index.php" method="post">
                 <h2>Mantenimiento Departamentos</h2>
-                <div>
-                    <input name="busquedaDesc" type="text" placeholder="Buscar por descripción..." value="<?php echo $_REQUEST['busquedaDesc']??""?>">                     
-                    <button class="boton" name="buscar">Buscar</button>
+                <div class="menu">
                     <button class="boton" name="volver">Volver</button>
                     <button class="boton" name="altaDepartamento">Añadir departamento</button>
                     <button class="boton" name="importarDepartamentos">Importar departamentos</button>
                     <button class="boton" name="exportarDepartamentos">Exportar departamentos</button>
+                    <br>
+                    <input name="busquedaDesc" type="text" placeholder="Buscar por descripción..." value="<?php echo $_REQUEST['busquedaDesc']??""?>">                     
+                    <button class="boton" name="buscar">Buscar</button>
+                    <input id="busquedaTodos" name="tipoCriterio" type="radio" value="0" checked>
+                    <label for="busquedaTodos">Todos</label>
+                    <input id="busquedaAlta" name="tipoCriterio" type="radio" value="1">
+                    <label for="busquedaAlta">Alta</label>
+                    <input id="busquedaBaja" name="tipoCriterio" type="radio" value="2">
+                    <label for="busquedaBaja">Baja</label>
                 </div>
                 <table class="tablaDepartamentos">
                     <tr>
@@ -26,8 +33,7 @@
                         <th>Volumen de negocio</th>
                         <th>Fecha de baja</th>
                         <th>Editar</th>
-                        <th>Baja lógica</th>
-                        <th>Rehab.</th>
+                        <th>Baja</th>
                         <th>Eliminar</th>
                     </tr>
                     <?php
@@ -40,8 +46,18 @@
                         <td><?php echo $departamento['T02_VolumenDeNegocio']?> €</td>
                         <td><?php echo !empty($departamento['T02_FechaBajaDepartamento'])?date("d/m/Y", $departamento['T02_FechaBajaDepartamento']):"" ?></td>
                         <td><button class="boton" name="editarDepartamento" value="<?php echo $departamento['T02_CodDepartamento']?>"><img src="webroot/img/editar.png"></button></td>
-                        <td><button class="boton" name="bajaLogica" value="<?php echo $departamento['T02_CodDepartamento']?>">BL</button></td>
-                        <td><button class="boton" name="rehabilitar"  value="<?php echo $departamento['T02_CodDepartamento']?>">RE</button></td>
+                        <?php
+                            if(empty($departamento['T02_FechaBajaDepartamento'])){
+                        ?>
+                        <td><button class="boton" name="bajaLogica" value="<?php echo $departamento['T02_CodDepartamento']?>"><img src="webroot/img/baja.png"></button></td>
+                        <?php
+                            }
+                            else{
+                        ?>
+                        <td><button class="boton" name="rehabilitar"  value="<?php echo $departamento['T02_CodDepartamento']?>"><img src="webroot/img/alta.png"></button></td>
+                        <?php
+                            }
+                        ?>
                         <td><button class="boton" name="bajaFisica"  value="<?php echo $departamento['T02_CodDepartamento']?>"><img src="webroot/img/eliminar.png"></button></td>
                     </tr>    
                     <?php

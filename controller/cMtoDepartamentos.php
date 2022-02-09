@@ -53,6 +53,9 @@
         $oResultado=$oDepartamentos->fetchObject();
     }
     if($bEntradaOK){
+        $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda'] = $_REQUEST['busquedaDesc'];
+        $_SESSION['criterioBusquedaDepartamentos']['estado'] = $_REQUEST['tipoCriterio'];
+        
         if(isset($_REQUEST['busquedaDesc'])){
             $aRespuestas['busquedaDesc']=$_REQUEST['busquedaDesc'];
             $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc']);

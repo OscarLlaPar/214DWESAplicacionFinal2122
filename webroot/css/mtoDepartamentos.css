@@ -9,10 +9,10 @@
     border:solid white 1px;
     border-collapse: collapse;
 }
-th:nth-last-child(-n+4), td:nth-last-child(-n+4){
-    width:25px;
-    border:none;
+th:nth-last-child(-n+3), td:nth-last-child(-n+3){
+    width:30px;
 }
+
 form{
     display: flex;
     flex-flow: column;
@@ -22,9 +22,9 @@ form{
 .botones{
     display:flex;
 }
-.departamento .boton img{
-    height:25px;
-    width:25px;
+.boton img{
+    height:30px;
+    width:30px;
 }
 h3{
     font-size:24px;
@@ -41,4 +41,10 @@ h3{
 }
 .baja .codigo{
     color:grey;
+}
+.menu{
+    text-align: center;
+}
+.menu *{
+    margin:10px;
 }
