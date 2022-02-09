@@ -1,0 +1,26 @@
+main{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    overflow-y:auto;
+    gap:72px;
+    
+}
+form{
+    display:flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    width:50vw;
+    gap: 10px;
+}
+.campo{
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    justify-content: space-around;
+    width: 30%;
+}
+.botones{
+    flex-basis:100%;
+}

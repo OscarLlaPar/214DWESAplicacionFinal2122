@@ -44,15 +44,26 @@
          * 
          * @param String $descripcionDepartamento Descripción del departamento
          * a buscar.
+         * @param Int $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
+         * están de alta; 2 para buscar los que están de baja.
          * @return PDOStatement Resultado del insert.
          */
-        public static function buscaDepartamentosPorDesc($descripcionDepartamento){
+        public static function buscaDepartamentosPorDesc($descripcionDepartamento, $tipoBusqueda=0){
+            
+            switch($tipoBusqueda){
+                case 0: $sQueryTipoBusqueda='';
+                    break;
+                case 1: $sQueryTipoBusqueda='AND T02_FechaBajaDepartamento IS NULL';
+                    break;
+                case 2: $sQueryTipoBusqueda='AND T02_FechaBajaDepartamento IS NOT NULL';
+                    break;
+            }
             /*
              * Query de selección de departamento según su descripción
              */
             $sSelect = <<<QUERY
                 SELECT * FROM T02_Departamento
-                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%';
+                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' {$sQueryTipoBusqueda};
             QUERY;
 
             return DBPDO::ejecutarConsulta($sSelect);
@@ -126,8 +137,8 @@
             
             $sUpdate = <<<QUERY
                 UPDATE T02_Departamento SET T02_DescDepartamento = "{$oDepartamento->getDescDepartamento()}",
-                T02_VolumenNegocio = {$oDepartamento->getVolumenDeNegocio()}
-                WHERE T01_CodUsuario = "{$oDepartamento->getCodUsuario()}";
+                T02_VolumenDeNegocio = {$oDepartamento->getVolumenDeNegocio()}
+                WHERE T02_CodDepartamento = "{$oDepartamento->getCodDepartamento()}";
             QUERY;
 
             

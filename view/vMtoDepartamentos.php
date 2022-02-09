@@ -18,11 +18,11 @@
                     <br>
                     <input name="busquedaDesc" type="text" placeholder="Buscar por descripción..." value="<?php echo $_REQUEST['busquedaDesc']??""?>">                     
                     <button class="boton" name="buscar">Buscar</button>
-                    <input id="busquedaTodos" name="tipoCriterio" type="radio" value="0" checked>
+                    <input id="busquedaTodos" name="tipoCriterio" type="radio" value="0" <?php echo (!isset($_SESSION['criterioBusquedaDepartamentos']['estado'])||$_SESSION['criterioBusquedaDepartamentos']['estado']==0)?"checked":""?>>
                     <label for="busquedaTodos">Todos</label>
-                    <input id="busquedaAlta" name="tipoCriterio" type="radio" value="1">
+                    <input id="busquedaAlta" name="tipoCriterio" type="radio" value="1" <?php echo (isset($_SESSION['criterioBusquedaDepartamentos']['estado'])&&$_SESSION['criterioBusquedaDepartamentos']['estado']==1)?"checked":""?>>
                     <label for="busquedaAlta">Alta</label>
-                    <input id="busquedaBaja" name="tipoCriterio" type="radio" value="2">
+                    <input id="busquedaBaja" name="tipoCriterio" type="radio" value="2"<?php echo (isset($_SESSION['criterioBusquedaDepartamentos']['estado'])&&$_SESSION['criterioBusquedaDepartamentos']['estado']==2)?"checked":""?>>
                     <label for="busquedaBaja">Baja</label>
                 </div>
                 <table class="tablaDepartamentos">

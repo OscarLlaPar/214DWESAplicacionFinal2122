@@ -33,6 +33,8 @@
         "infoREST" => "controller/cInfoREST.php",
         "mtoDepartamentos" => "controller/cMtoDepartamentos.php",
         "altaDepartamento" => "controller/cAltaDepartamento.php",
+        "eliminarDepartamento" => "controller/cEliminarDepartamento.php",
+        "consultarModificarDepartamento" => "controller/cConsultarModificarDepartamento.php",
         "WIP" => "controller/cWIP.php",
         "error" => "controller/cError.php"
     ];
@@ -51,6 +53,8 @@
         "infoREST" => "view/vInfoREST.php",
         "mtoDepartamentos"=>"view/vMtoDepartamentos.php",
         "altaDepartamento"=>"view/vAltaDepartamento.php",
+        "eliminarDepartamento"=>"view/vEliminarDepartamento.php",
+        "consultarModificarDepartamento"=>"view/vConsultarModificarDepartamento.php",
         "WIP" => "view/vWIP.php",
         "error" => "view/vError.php"
     ];

@@ -14,6 +14,22 @@
         exit;
     }
     
+    if(isset($_REQUEST['editarDepartamento'])){
+        $_SESSION['codDepartamentoEnCurso']=$_REQUEST['editarDepartamento'];
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='consultarModificarDepartamento';
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['bajaFisica'])){
+        $_SESSION['codDepartamentoEnCurso']=$_REQUEST['bajaFisica'];
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='eliminarDepartamento';
+        header('Location: index.php');
+        exit;
+    }
+    
     if(isset($_REQUEST['bajaLogica'])){
         DepartamentoPDO::bajaLogicaDepartamento($_REQUEST['bajaLogica']);
         
@@ -58,7 +74,7 @@
         
         if(isset($_REQUEST['busquedaDesc'])){
             $aRespuestas['busquedaDesc']=$_REQUEST['busquedaDesc'];
-            $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc']);
+            $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc'],$_SESSION['criterioBusquedaDepartamentos']['estado']);
             $oResultado=$oDepartamentos->fetchObject();
         }
         
