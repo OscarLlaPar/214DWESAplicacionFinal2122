@@ -143,9 +143,22 @@ footer{
 .contenidoFooter a:hover{
     color:white;
 }
-.giturl{
+.giturl, .rss{
     height:25px;
 }
 .logoFooter{
     height:75px;
+}
+.tecnologias{
+    background: none;
+    border:none;
+    color: #8D7DFA;
+    font-family:Yantramanav;
+    font-size:16px;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+.tecnologias:hover{
+    color:white;
+    cursor:pointer;
 }

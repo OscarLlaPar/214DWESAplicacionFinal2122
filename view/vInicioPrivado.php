@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>OLP-Login Logout - Inicio</title>
+        <title>OLP-Aplicación Final - Inicio</title>
         <link href="webroot/css/inicioPrivado.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>

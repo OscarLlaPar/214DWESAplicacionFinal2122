@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>OLP-Login Logout - Borrar Cuenta</title>
+        <title>OLP-Aplicación Final - Borrar Cuenta</title>
         <link href="webroot/css/borrarCuenta.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>

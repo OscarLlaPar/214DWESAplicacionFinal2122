@@ -37,7 +37,8 @@
         "consultarModificarDepartamento" => "controller/cConsultarModificarDepartamento.php",
         "mtoUsuarios" => "controller/cMtoUsuarios.php",
         "WIP" => "controller/cWIP.php",
-        "error" => "controller/cError.php"
+        "error" => "controller/cError.php",
+        "tecnologias"=>"controller/cTecnologias.php"
     ];
     
     //Array de los ficheros de vistas
@@ -58,5 +59,6 @@
         "consultarModificarDepartamento"=>"view/vConsultarModificarDepartamento.php",
         "mtoUsuarios"=>"view/vMtoUsuarios.php",
         "WIP" => "view/vWIP.php",
-        "error" => "view/vError.php"
+        "error" => "view/vError.php",
+        "tecnologias" => "view/vTecnologias.php"
     ];

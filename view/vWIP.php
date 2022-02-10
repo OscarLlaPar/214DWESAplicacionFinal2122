@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>OLP-Login Logout - WIP</title>
+        <title>OLP-Aplicación Final - WIP</title>
         <link href="webroot/css/wip.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>

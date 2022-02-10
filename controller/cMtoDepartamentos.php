@@ -44,6 +44,8 @@
         exit;
     }
     
+    
+    
     $aErrores=[
       "busquedaDesc" => ""  
     ];
@@ -89,6 +91,19 @@
         $oResultado=$oDepartamentos->fetchObject();
     }
     
+    
+    if(isset($_REQUEST['exportarDepartamentos'])){
+        $contenidoJSON = json_encode($aDepartamentos, JSON_PRETTY_PRINT);
+        $escritura = file_put_contents('departamentos.json', $contenidoJSON);
+    }
+    
+    if(isset($_REQUEST['importarDepartamentos'])){
+        $json= file_get_contents('../tmp/departamentos.json');
+        $aFichero= json_decode($json, true);
+        foreach($aFichero as $fila){
+            DepartamentoPDO::altaDepartamento($fila['T02_CodDepartamento'], $fila['T02_DescDepartamento'], $fila['T02_VolumenDeNegocio']);
+        }
+    }
     
     $vistaEnCurso = $aVistas['mtoDepartamentos'];
     require_once "view/LayoutHeader.php";
