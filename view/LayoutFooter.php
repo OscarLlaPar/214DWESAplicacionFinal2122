@@ -6,7 +6,7 @@
                 </div>
                 <img src="webroot/img/logo.png" class="logoFooter">
                 <ul>
-                    <li><a href="#">Documentación</a></li>
+                    <li><a href="doc/PHPDoc/index.html">Documentación</a></li>
                     <li><a href="#">Currículum del autor</a></li>
                     <li><a href="https://devonstank.com/" target="__blank">Web imitada</a></li>
                     <li><a href="#">RSS</a></li>
