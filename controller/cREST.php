@@ -7,8 +7,8 @@
         * Última modificación: 25/01/2022
     */
     if(isset($_REQUEST['volver'])){
-        $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-        $_SESSION['paginaAnterior']='REST';
+        $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='inicioPrivado';
         header('Location: index.php');
         exit;
     }

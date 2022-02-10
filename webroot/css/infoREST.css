@@ -1,0 +1,15 @@
+.textoInfo{
+    background:black;
+    height:75vh;
+    padding:20px 0;
+}
+.textoInfo *{
+    margin:15px;
+}
+pre, code{
+    background-color: dimgray;
+    padding:5px;
+}
+code{
+    border-radius:5px;
+}

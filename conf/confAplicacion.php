@@ -35,6 +35,7 @@
         "altaDepartamento" => "controller/cAltaDepartamento.php",
         "eliminarDepartamento" => "controller/cEliminarDepartamento.php",
         "consultarModificarDepartamento" => "controller/cConsultarModificarDepartamento.php",
+        "mtoUsuarios" => "controller/cMtoUsuarios.php",
         "WIP" => "controller/cWIP.php",
         "error" => "controller/cError.php"
     ];
@@ -55,6 +56,7 @@
         "altaDepartamento"=>"view/vAltaDepartamento.php",
         "eliminarDepartamento"=>"view/vEliminarDepartamento.php",
         "consultarModificarDepartamento"=>"view/vConsultarModificarDepartamento.php",
+        "mtoUsuarios"=>"view/vMtoUsuarios.php",
         "WIP" => "view/vWIP.php",
         "error" => "view/vError.php"
     ];
