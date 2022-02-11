@@ -6,6 +6,8 @@
     require_once '../model/DepartamentoPDO.php';
 
     //http://daw214.sauces.local/214DWESAplicacionFinal2122/api/consultaDepartamentoPorCodigo.php?codDepartamento=UNO
+    //https://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/consultaDepartamentoPorCodigo.php?codDepartamento=UNO
+    
     $bRespuestaOK=true;
     if(isset($_GET['codDepartamento'])){
         $oDepartamento = DepartamentoPDO::buscaDepartamentoPorCod($_GET['codDepartamento']);

@@ -39,16 +39,16 @@
     
     $bEntradaOK = true;
     
-    //$_SESSION['usuario214DWESAplicacionLoginLogout']= UsuarioPDO::buscarUsuarioPorCod($_SESSION['usuario214DWESAplicacionLoginLogout']->getCodUsuario());
+    //$_SESSION['usuario214DWESAplicacionFinal2122']= UsuarioPDO::buscarUsuarioPorCod($_SESSION['usuario214DWESAplicacionFinal2122']->getCodUsuario());
     
     $aUsuario=[
-        'nombre' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getCodUsuario(),
-        'descripcion' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getDescUsuario(),
-        'fechaHoraUltimaConexion' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getFechaHoraUltimaConexion(),
-        'numConexiones' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getNumAccesos(),
-        'perfil' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getPerfil(),
-        'password' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getPassword(),
-        'imagenUsuario' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getImagenUsuario()
+        'nombre' => $_SESSION['usuario214DWESAplicacionFinal2122']->getCodUsuario(),
+        'descripcion' => $_SESSION['usuario214DWESAplicacionFinal2122']->getDescUsuario(),
+        'fechaHoraUltimaConexion' => $_SESSION['usuario214DWESAplicacionFinal2122']->getFechaHoraUltimaConexion(),
+        'numConexiones' => $_SESSION['usuario214DWESAplicacionFinal2122']->getNumAccesos(),
+        'perfil' => $_SESSION['usuario214DWESAplicacionFinal2122']->getPerfil(),
+        'password' => $_SESSION['usuario214DWESAplicacionFinal2122']->getPassword(),
+        'imagenUsuario' => $_SESSION['usuario214DWESAplicacionFinal2122']->getImagenUsuario()
     ];
     
     if(isset($_REQUEST['aceptar'])){
@@ -82,10 +82,10 @@
             }
             //Si no se ha especificado imagen
             else{
-                $aRespuestas['imagenUsuario'] = $_SESSION['usuario214DWESAplicacionLoginLogout']->getImagenUsuario();
+                $aRespuestas['imagenUsuario'] = $_SESSION['usuario214DWESAplicacionFinal2122']->getImagenUsuario();
             }
         
-        $_SESSION['usuario214DWESAplicacionLoginLogout']= UsuarioPDO::modificarUsuario($_SESSION['usuario214DWESAplicacionLoginLogout'],$aRespuestas['descripcion'], $aRespuestas['imagenUsuario']);
+        $_SESSION['usuario214DWESAplicacionFinal2122']= UsuarioPDO::modificarUsuario($_SESSION['usuario214DWESAplicacionFinal2122'],$aRespuestas['descripcion'], $aRespuestas['imagenUsuario']);
         
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
         

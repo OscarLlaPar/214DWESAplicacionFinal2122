@@ -30,9 +30,15 @@
         "borrarCuenta" => "controller/cBorrarCuenta.php",
         "cambiarPassword" => "controller/cCambiarPassword.php",
         "REST" => "controller/cREST.php",
+        "infoREST" => "controller/cInfoREST.php",
         "mtoDepartamentos" => "controller/cMtoDepartamentos.php",
+        "altaDepartamento" => "controller/cAltaDepartamento.php",
+        "eliminarDepartamento" => "controller/cEliminarDepartamento.php",
+        "consultarModificarDepartamento" => "controller/cConsultarModificarDepartamento.php",
+        "mtoUsuarios" => "controller/cMtoUsuarios.php",
         "WIP" => "controller/cWIP.php",
-        "error" => "controller/cError.php"
+        "error" => "controller/cError.php",
+        "tecnologias"=>"controller/cTecnologias.php"
     ];
     
     //Array de los ficheros de vistas
@@ -46,7 +52,13 @@
         "borrarCuenta" => "view/vBorrarCuenta.php",
         "cambiarPassword" => "view/vCambiarPassword.php",
         "REST" => "view/vREST.php",
+        "infoREST" => "view/vInfoREST.php",
         "mtoDepartamentos"=>"view/vMtoDepartamentos.php",
+        "altaDepartamento"=>"view/vAltaDepartamento.php",
+        "eliminarDepartamento"=>"view/vEliminarDepartamento.php",
+        "consultarModificarDepartamento"=>"view/vConsultarModificarDepartamento.php",
+        "mtoUsuarios"=>"view/vMtoUsuarios.php",
         "WIP" => "view/vWIP.php",
-        "error" => "view/vError.php"
+        "error" => "view/vError.php",
+        "tecnologias" => "view/vTecnologias.php"
     ];

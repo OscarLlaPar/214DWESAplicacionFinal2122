@@ -26,7 +26,7 @@
     $bEntradaOK = true;
     
     if(isset($_REQUEST['aceptar'])){
-        $oUsuarioValido = UsuarioPDO::validarUsuario($_SESSION['usuario214DWESAplicacionLoginLogout']->getCodUsuario(), $_REQUEST['password']);
+        $oUsuarioValido = UsuarioPDO::validarUsuario($_SESSION['usuario214DWESAplicacionFinal2122']->getCodUsuario(), $_REQUEST['password']);
             
         if(!$oUsuarioValido){
             $bEntradaOK = false;
@@ -50,7 +50,7 @@
     if($bEntradaOK){
         $aRespuestas['nuevaPassword'] = $_REQUEST['nuevaPassword'];
         
-        $_SESSION['usuario214DWESAplicacionLoginLogout']= UsuarioPDO::cambiarPassword($_SESSION['usuario214DWESAplicacionLoginLogout'], $aRespuestas['nuevaPassword']);
+        $_SESSION['usuario214DWESAplicacionFinal2122']= UsuarioPDO::cambiarPassword($_SESSION['usuario214DWESAplicacionFinal2122'], $aRespuestas['nuevaPassword']);
         
         $_SESSION['paginaEnCurso'] = 'miCuenta';
         header('Location: index.php');

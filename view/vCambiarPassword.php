@@ -1,7 +1,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>OLP-Login Logout - Cambiar Contraseña</title>
+        <title>OLP-Aplicación Final - Cambiar Contraseña</title>
         <link href="webroot/css/cambiarPassword.css" rel="stylesheet" type="text/css"/>
     </head>
         <main>

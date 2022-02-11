@@ -14,16 +14,16 @@
     }
     
     $aUsuario=[
-        'nombre' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getCodUsuario(),
-        'descripcion' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getDescUsuario(),
-        'fechaHoraUltimaConexion' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getFechaHoraUltimaConexion(),
-        'numConexiones' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getNumAccesos(),
-        'perfil' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getPerfil(),
-        'password' => $_SESSION['usuario214DWESAplicacionLoginLogout']->getPassword()
+        'nombre' => $_SESSION['usuario214DWESAplicacionFinal2122']->getCodUsuario(),
+        'descripcion' => $_SESSION['usuario214DWESAplicacionFinal2122']->getDescUsuario(),
+        'fechaHoraUltimaConexion' => $_SESSION['usuario214DWESAplicacionFinal2122']->getFechaHoraUltimaConexion(),
+        'numConexiones' => $_SESSION['usuario214DWESAplicacionFinal2122']->getNumAccesos(),
+        'perfil' => $_SESSION['usuario214DWESAplicacionFinal2122']->getPerfil(),
+        'password' => $_SESSION['usuario214DWESAplicacionFinal2122']->getPassword()
     ];
     
     if(isset($_REQUEST['aceptar'])){
-        UsuarioPDO::borrarUsuario($_SESSION['usuario214DWESAplicacionLoginLogout']);
+        UsuarioPDO::borrarUsuario($_SESSION['usuario214DWESAplicacionFinal2122']);
         session_unset();
         session_destroy();
         header('Location: index.php');

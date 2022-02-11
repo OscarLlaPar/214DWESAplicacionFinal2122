@@ -10,37 +10,60 @@
             
             <form action="index.php" method="post">
                 <h2>Mantenimiento Departamentos</h2>
-                <div>
+                <div class="menu">
+                    <button class="boton" name="volver">Volver</button>
+                    <button class="boton" name="altaDepartamento">Añadir departamento</button>
+                    <button class="boton" name="importarDepartamentos">Importar departamentos</button>
+                    <button class="boton" name="exportarDepartamentos">Exportar departamentos</button>
+                    <br>
                     <input name="busquedaDesc" type="text" placeholder="Buscar por descripción..." value="<?php echo $_REQUEST['busquedaDesc']??""?>">                     
                     <button class="boton" name="buscar">Buscar</button>
-                    <button class="boton" name="volver">Volver</button>
+                    <input id="busquedaTodos" name="tipoCriterio" type="radio" value="0" <?php echo (!isset($_SESSION['criterioBusquedaDepartamentos']['estado'])||$_SESSION['criterioBusquedaDepartamentos']['estado']==0)?"checked":""?>>
+                    <label for="busquedaTodos">Todos</label>
+                    <input id="busquedaAlta" name="tipoCriterio" type="radio" value="1" <?php echo (isset($_SESSION['criterioBusquedaDepartamentos']['estado'])&&$_SESSION['criterioBusquedaDepartamentos']['estado']==1)?"checked":""?>>
+                    <label for="busquedaAlta">Alta</label>
+                    <input id="busquedaBaja" name="tipoCriterio" type="radio" value="2"<?php echo (isset($_SESSION['criterioBusquedaDepartamentos']['estado'])&&$_SESSION['criterioBusquedaDepartamentos']['estado']==2)?"checked":""?>>
+                    <label for="busquedaBaja">Baja</label>
                 </div>
-                <div class="departamentos">
+                <table class="tablaDepartamentos">
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Fecha de creación</th>
+                        <th>Volumen de negocio</th>
+                        <th>Fecha de baja</th>
+                        <th>Editar</th>
+                        <th>Baja</th>
+                        <th>Eliminar</th>
+                    </tr>
                     <?php
                         foreach($aDepartamentos as $departamento){
                     ?>
-                    <div class="departamento">
-                        <p class="codigo"><?php echo $departamento['T02_CodDepartamento']?></p>
-                        <h3><?php echo $departamento['T02_DescDepartamento']?></h3>
-                        <p><strong>Fecha de creación: </strong><?php echo $departamento['T02_FechaCreacionDepartamento']?></p>
-                        <p><strong>Volumen de negocio: </strong><?php echo $departamento['T02_VolumenDeNegocio']?></p>
-                    <?php
-                            if(!is_null($departamento['T02_FechaBajaDepartamento'])){
-                    ?>
-                        <p><strong>Fecha de baja: </strong><?php echo $departamento['T02_FechaBajaDepartamento']?></p>
-                    <?php
+                    <tr class="<?php echo (empty($departamento['T02_FechaBajaDepartamento']))?"activo":"baja" ?>">
+                        <td class="codigo"><?php echo $departamento['T02_CodDepartamento']?></td>
+                        <td><?php echo $departamento['T02_DescDepartamento']?></td>
+                        <td><?php echo date("d/m/Y", $departamento['T02_FechaCreacionDepartamento'])?></td>
+                        <td><?php echo $departamento['T02_VolumenDeNegocio']?> €</td>
+                        <td><?php echo !empty($departamento['T02_FechaBajaDepartamento'])?date("d/m/Y", $departamento['T02_FechaBajaDepartamento']):"" ?></td>
+                        <td><button class="boton" name="editarDepartamento" value="<?php echo $departamento['T02_CodDepartamento']?>"><img src="webroot/img/editar.png"></button></td>
+                        <?php
+                            if(empty($departamento['T02_FechaBajaDepartamento'])){
+                        ?>
+                        <td><button class="boton" name="bajaLogica" value="<?php echo $departamento['T02_CodDepartamento']?>"><img src="webroot/img/baja.png"></button></td>
+                        <?php
                             }
-                    ?>
-                        <div class="botones">
-                            <button class="boton"><img src="webroot/img/editar.png"></button>
-                            <button class="boton"><img src="webroot/img/eliminar.png"></button>
-                            <button class="boton"><img src="webroot/img/ver.png"></button>
-                        </div>
-                    </div>    
+                            else{
+                        ?>
+                        <td><button class="boton" name="rehabilitar"  value="<?php echo $departamento['T02_CodDepartamento']?>"><img src="webroot/img/alta.png"></button></td>
+                        <?php
+                            }
+                        ?>
+                        <td><button class="boton" name="bajaFisica"  value="<?php echo $departamento['T02_CodDepartamento']?>"><img src="webroot/img/eliminar.png"></button></td>
+                    </tr>    
                     <?php
                         }
                     ?>
-                </div>
+                </table>
             </form>
         </main>
     </body>

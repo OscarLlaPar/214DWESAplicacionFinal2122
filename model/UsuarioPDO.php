@@ -196,8 +196,22 @@
         /*
          * 
          */
-        public static function buscaUsuariosporDesc(){
-
+        public static function buscaUsuariosPorDesc($descUsuario){
+            $aUsuarios=[];
+            $sSelect = <<<QUERY
+                SELECT * FROM T01_Usuario
+                WHERE T01_DescUsuario='{$descUsuario}';
+            QUERY;
+            
+            $aResultado=DBPDO::ejecutarConsulta($sSelect);
+            $oFila=$aResultado->fetchObject();
+            while($oFila){
+                array_push($aUsuarios, $oFila);
+                $oFila=$aResultado->fetchObject();
+            }
+            
+                
+            return $aUsuarios; 
         }
 
         /**

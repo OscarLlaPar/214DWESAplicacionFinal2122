@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>OLP-Login Logout - Editar Cuenta</title>
+        <title>OLP-Aplicación Final - Editar Cuenta</title>
         <link href="webroot/css/miCuenta.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>

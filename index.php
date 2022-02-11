@@ -9,8 +9,16 @@
     require_once "conf/confAplicacion.php";
     session_start();
     
+    
     if(!isset($_SESSION['paginaEnCurso'])){
         $_SESSION['paginaEnCurso'] = 'inicioPublico';
+    }
+    
+    if(isset($_REQUEST['tecnologias'])){
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='tecnologias';
+        header('Location: index.php');
+        exit;
     }
     // Cargado de la página indicada.
     require_once $aControladores[$_SESSION['paginaEnCurso']]; 

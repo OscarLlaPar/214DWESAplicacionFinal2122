@@ -14,7 +14,7 @@
     align-items: center;
     flex-flow: column;
     gap:10px;
-    width:40%;
+    width:90%;
     
 }
 .definirRest{
@@ -26,7 +26,7 @@
     text-align: center;
     margin:10px auto;
     padding: 15px;
-    width:40%;
+    width:95%;
     height: fit-content;
     display:flex;
     flex-flow:column;
@@ -96,12 +96,16 @@ form{
     flex-basis:100%;
     width:100%;
     display:flex;
-    flex-flow:row wrap;
+    flex-flow:column;
     justify-content:space-between;
     margin-bottom: 20px;
-    padding:50px;
     gap:15px;
     height:10%;
+}
+.apisRest{
+    display:grid;
+    width:100%;
+    grid-template-columns:repeat(4,2.5fr);
 }
 .cuadroBusqueda{
     display:flex;
@@ -109,8 +113,6 @@ form{
     flex-basis:50%;
 }
 .botonVolver{
-    flex-basis: 100%;
-    width:100vw;
     display:flex;
     justify-content: center;
 }
@@ -121,7 +123,7 @@ form{
     border-top: solid dimgrey 1px;
     border-bottom: solid dimgrey 1px;
     border-right: solid dimgrey 1px;
-    width:90%;
+    width:30%;
     padding:10px;
     gap:10px;
     height:100px;
@@ -131,6 +133,19 @@ form{
 }
 .icono img{
     height:100%;
+}
+.departamento{
+    background-color: black;
+    border-left: solid dimgrey 5px;
+    border-top: solid dimgrey 1px;
+    border-bottom: solid dimgrey 1px;
+    border-right: solid dimgrey 1px;
+    padding:10px;
+    width:30%;
+}
+.codigo{
+    font-weight:bold;
+    color: #8D7DFA;
 }
 .error{
     background-color: #87012B;
@@ -146,4 +161,17 @@ form{
 .errorValidacion{
     color: #EB3755;
     padding:10px;
+}
+.info{
+    border:none;
+    background:transparent;
+    transition: all 0.5s ease;
+}
+.info:hover{
+    cursor:pointer;
+    filter: invert(0.4) sepia(1) hue-rotate(-150deg) saturate(700%);
+}
+.info img{
+    width:25px;
+    height:25px;
 }

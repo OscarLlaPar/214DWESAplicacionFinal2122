@@ -1,0 +1,14 @@
+main{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+}
+form{
+    font-size:24px;
+    display: flex;
+    flex-flow: column;
+    gap:16px;
+    align-items: center;
+}
