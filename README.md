@@ -14,7 +14,11 @@ Aplicación final del curso DAW2 2021-2022. LoginLogout, mantenimiento de depart
 - API REST de Weather Shark - Consultar el clima incluyendo una ciudad
 - API REST propia - Búsqueda de departamento por código
 - Consulta de diagramas
-- Búsqueda de departamentos por descripción
+- Búsqueda de departamentos por descripción (filtrado por alta, por baja, o todos)
+- Alta de departamento
+- Baja lógica de departamento y rehabilitación
+- Baja física de departamento
+- Modificar departamento
 
 ### Software utilizado
 - Ubuntu Server 20.04.3
