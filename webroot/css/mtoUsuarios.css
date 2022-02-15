@@ -14,6 +14,12 @@
     font-size:20px;
     margin:0;
 }
+.formulario{
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    gap:15px;
+}
 #usuarios{
     width:100%;
 }

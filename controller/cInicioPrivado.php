@@ -25,6 +25,7 @@
     if(isset($_REQUEST['mtoDepartamentos'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso'] = 'mtoDepartamentos';
+        $_SESSION['numPaginacionDepartamentos']=1;
         header('Location: index.php');
         exit;
     }
