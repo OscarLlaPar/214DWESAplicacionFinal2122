@@ -14,7 +14,10 @@ insert into T01_Usuario values
 ('heraclio',SHA2('heracliopaso',256),'Heraclio', null, 0, 'usuario', null),
 ('amor',SHA2('amorpaso',256),'Amor', null, 0, 'usuario', null),
 ('antonio',SHA2('antoniopaso',256),'Antonio', null, 0, 'usuario', null),
-('albertoB',SHA2('albertoBpaso',256),'AlbertoB', null, 0, 'usuario', null);
+('pruebaA',SHA2('pruebaApaso',256),'Usuario de prueba 1', null, 0, 'usuario', null),
+('prueabaB',SHA2('pruebaBpaso',256),'Usuario de prueba 2', null, 0, 'usuario', null),
+('pruebaC',SHA2('pruebaCpaso',256),'Usuario de prueba 3', null, 0, 'usuario', null),
+('pruebaD',SHA2('pruebaDpaso',256),'Usuario de prueba 4', null, 0, 'usuario', null);
 
 insert into T02_Departamento values
 ("UNO", "Primer departamento", UNIX_TIMESTAMP(), 30.45, null),

@@ -16,14 +16,13 @@
     if(is_object($oUsuario)){
         if(UsuarioPDO::borrarUsuario($oUsuario)){
             $aRespuesta=[
-                "respuestaOK"=>$bRespuestaOK,
-                "usuarioEliminado"=>$oUsuario
+                "eliminado"=>$bRespuestaOK
             ];
         }
         else{
             $bRespuestaOK=false;
             $aRespuesta=[
-                "respuestaOK"=>$bRespuestaOK,
+                "eliminado"=>$bRespuestaOK,
                 "mensaje"=>"Ha habido un problema con la API."
             ];
         }
@@ -31,7 +30,7 @@
     else{
         $bRespuestaOK=false;
         $aRespuesta=[
-                "respuestaOK"=>$bRespuestaOK,
+                "eliminado"=>$bRespuestaOK,
                 "mensaje"=>"Usuario no encontrado."
             ];
     }

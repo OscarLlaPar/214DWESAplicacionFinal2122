@@ -63,7 +63,7 @@
              */
             $sSelect = <<<QUERY
                 SELECT * FROM T02_Departamento
-                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' LIMIT {$pagina},5 {$sQueryTipoBusqueda}
+                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' {$sQueryTipoBusqueda} LIMIT {$pagina},5 
                 ;
             QUERY;
 
