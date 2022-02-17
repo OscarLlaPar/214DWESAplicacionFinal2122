@@ -8,7 +8,7 @@
                 <img src="webroot/img/logo.png" class="logoFooter">
                 <ul>
                     <li><a href="doc/PHPDoc/index.html" target="__blank">Documentación</a></li>
-                    <li><a href="#">Currículum del autor</a></li>
+                    <li><a href="doc/Curriculum.pdf" target="__blank">Currículum del autor</a></li>
                     <li><a href="https://devonstank.com/" target="__blank">Web imitada</a></li>
                     <li>
                         <form action="index.php" method="post">

@@ -60,9 +60,9 @@ function mostrarUsuarios(){
                             }
                     };
                     //Clase
-                    xhttp.open("GET", `http://daw214.sauces.local/214DWESAplicacionFinal2122/api/borrarUsuario.php?codUsuario=${botonEliminar.value}`, true);
+                    //xhttp.open("GET", `http://daw214.sauces.local/214DWESAplicacionFinal2122/api/borrarUsuario.php?codUsuario=${botonEliminar.value}`, true);
                     //Casa
-                    //xhttp.open("GET", `http://192.168.0.120/214DWESAplicacionFinal2122/api/borrarUsuario.php?codUsuario=${botonEliminar.value}`, true);
+                    xhttp.open("GET", `http://192.168.0.120/214DWESAplicacionFinal2122/api/borrarUsuario.php?codUsuario=${botonEliminar.value}`, true);
                     xhttp.send();
                 });
                 let iconoBoton = document.createElement("img");
@@ -75,29 +75,10 @@ function mostrarUsuarios(){
         }
     };
     //Clase
-    xhttp.open("GET", `http://daw214.sauces.local/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=${busqueda.value}`, true);
+    //xhttp.open("GET", `http://daw214.sauces.local/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=${busqueda.value}`, true);
     //Casa
-    //xhttp.open("GET", `http://192.168.0.120/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=${busqueda.value}`, true);
+    xhttp.open("GET", `http://192.168.0.120/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=${busqueda.value}`, true);
     xhttp.send();
 }
             
-    /*setTimeout(() => {
-        let tabla = document.getElementById("usuarios");
-        let botones= tabla.getElementsByTagName("button");
-        for (let boton of botones){
-            boton.addEventListener("click",function(event){
-                if(confirm(`¿Está seguro de que desea eliminar el usuario ${boton.value}?`))
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            mostrarUsuarios();
-                            alert("Usuario eliminado");
-                        }
-                };
-                //Clase
-                xhttp.open("GET", `http://daw214.sauces.local/214DWESAplicacionFinal2122/api/borrarUsuario.php?codUsuario=${boton.value}`, true);
-                //Casa
-                //xhttp.open("GET", `http://192.168.0.120/214DWESAplicacionFinal2122/api/borrarUsuario.php?codUsuario=${boton.value}`, true);
-                xhttp.send();
-            });
-        }
-    }, 100);*/
+  

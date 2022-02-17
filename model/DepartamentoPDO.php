@@ -49,7 +49,7 @@
          * @return PDOStatement Resultado del insert.
          */
         public static function buscaDepartamentosPorDesc($descripcionDepartamento, $tipoBusqueda = 0, $pagina = 0){
-            $pagina=$pagina*5;
+            $pagina=$pagina*3;
             switch($tipoBusqueda){
                 case 0: $sQueryTipoBusqueda='';
                     break;
@@ -63,7 +63,7 @@
              */
             $sSelect = <<<QUERY
                 SELECT * FROM T02_Departamento
-                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' {$sQueryTipoBusqueda} LIMIT {$pagina},5 
+                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' {$sQueryTipoBusqueda} LIMIT {$pagina},3 
                 ;
             QUERY;
 
