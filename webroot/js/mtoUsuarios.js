@@ -113,12 +113,12 @@ function mostrarUsuarios(){
         }
     };
     //Clase
-    //xhttp.open("GET", `http://daw214.sauces.local/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=${busqueda.value}`, true);
+    xhttp.open("GET", `http://daw214.sauces.local/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=${busqueda.value}`, true);
     //Casa
     xhttp.open("GET", `http://192.168.0.120/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=${busqueda.value}`, true);
     //Explotación
     //xhttp.open("GET", `http://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=${busqueda.value}`, true);
-    xhttp.send();
+
 }
             
   
