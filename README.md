@@ -19,6 +19,10 @@ Aplicación final del curso DAW2 2021-2022. LoginLogout, mantenimiento de depart
 - Baja lógica de departamento y rehabilitación
 - Baja física de departamento
 - Modificar departamento
+- Paginación de departamentos
+- Mantenimiento de usuarios para el usuario administrador
+- Buscar usuarios
+- Eliminar usuario
 
 ### Software utilizado
 - Ubuntu Server 20.04.3
