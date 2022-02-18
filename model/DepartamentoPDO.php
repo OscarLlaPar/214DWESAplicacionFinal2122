@@ -48,8 +48,8 @@
          * están de alta; 2 para buscar los que están de baja.
          * @return PDOStatement Resultado del insert.
          */
-        public static function buscaDepartamentosPorDesc($descripcionDepartamento, $tipoBusqueda=0){
-            
+        public static function buscaDepartamentosPorDesc($descripcionDepartamento, $tipoBusqueda = 0, $pagina = 0){
+            $pagina=$pagina*3;
             switch($tipoBusqueda){
                 case 0: $sQueryTipoBusqueda='';
                     break;
@@ -63,7 +63,8 @@
              */
             $sSelect = <<<QUERY
                 SELECT * FROM T02_Departamento
-                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' {$sQueryTipoBusqueda};
+                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' {$sQueryTipoBusqueda} LIMIT {$pagina},3 
+                ;
             QUERY;
 
             return DBPDO::ejecutarConsulta($sSelect);

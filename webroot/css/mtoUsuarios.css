@@ -1,0 +1,29 @@
+.mainUsuarios{
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    gap:25px;
+}
+#container{
+    width:90%;
+}
+.tablaUsuarios{
+    width:100%;
+    background:black;
+    text-align:center;
+    font-size:20px;
+    margin:0;
+}
+.formulario{
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    gap:15px;
+}
+#usuarios{
+    width:100%;
+}
+.tablaUsuarios,td,th{
+    border:solid white 1px;
+    border-collapse: collapse;
+}

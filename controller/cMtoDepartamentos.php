@@ -46,6 +46,27 @@
     
     
     
+    if(isset($_REQUEST['paginaAnterior']) && $_SESSION['numPaginacionDepartamentos']>1){
+        $_SESSION['numPaginacionDepartamentos']--;
+        
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['paginaSiguiente'])){
+        $_SESSION['numPaginacionDepartamentos']++;
+        
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['primeraPagina'])){
+        $_SESSION['numPaginacionDepartamentos']=1;
+        
+        header('Location: index.php');
+        exit;
+    }
+    
     $aErrores=[
       "busquedaDesc" => ""  
     ];
@@ -54,6 +75,8 @@
     ];
     
     $bEntradaOK=true;
+    
+    
     
     if(isset($_REQUEST['buscar'])){
         $aErrores['busquedaDesc']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaDesc'], 255, 1);
@@ -67,7 +90,7 @@
     }
     else{
         $bEntradaOK=false;
-        $oDepartamentos=DBPDO::ejecutarConsulta("SELECT * FROM T02_Departamento");
+        $oDepartamentos=DepartamentoPDO::buscaDepartamentosPorDesc("",0,$_SESSION['numPaginacionDepartamentos']-1);
         $oResultado=$oDepartamentos->fetchObject();
     }
     if($bEntradaOK){
@@ -76,7 +99,7 @@
         
         if(isset($_REQUEST['busquedaDesc'])){
             $aRespuestas['busquedaDesc']=$_REQUEST['busquedaDesc'];
-            $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc'],$_SESSION['criterioBusquedaDepartamentos']['estado']);
+            $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc'],$_SESSION['criterioBusquedaDepartamentos']['estado'], $_SESSION['numPaginacionDepartamentos']-1);
             $oResultado=$oDepartamentos->fetchObject();
         }
         

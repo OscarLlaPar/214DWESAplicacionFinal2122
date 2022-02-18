@@ -200,7 +200,7 @@
             $aUsuarios=[];
             $sSelect = <<<QUERY
                 SELECT * FROM T01_Usuario
-                WHERE T01_DescUsuario='{$descUsuario}';
+                WHERE T01_DescUsuario LIKE '%{$descUsuario}%';
             QUERY;
             
             $aResultado=DBPDO::ejecutarConsulta($sSelect);

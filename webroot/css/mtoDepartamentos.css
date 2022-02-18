@@ -1,9 +1,20 @@
-.tablaDepartamentos{
+.resultado{
     width:90%;
+    height:400px;
+}
+.tablaDepartamentos{
+    width:100%;
     background:black;
     text-align:center;
     font-size:20px;
     
+}
+
+.contenidoTabla{
+    height:150px;
+}
+.contenidoTabla tr, .contenidoTabla td{
+    height:50px;
 }
 .tablaDepartamentos,td,th{
     border:solid white 1px;
