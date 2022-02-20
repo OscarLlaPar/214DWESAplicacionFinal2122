@@ -59,3 +59,10 @@ h3{
 .menu *{
     margin:10px;
 }
+button:disabled{
+    border:solid grey 1px;
+}
+button:disabled:hover{
+    cursor: default;
+    background-color: transparent;
+}
