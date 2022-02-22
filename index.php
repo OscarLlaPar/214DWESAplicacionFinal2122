@@ -9,18 +9,25 @@
     require_once "conf/confAplicacion.php";
     session_start();
     
-    
-    if(!isset($_SESSION['paginaEnCurso'])){
-        $_SESSION['paginaEnCurso'] = 'inicioPublico';
-    }
-    
     if(isset($_REQUEST['tecnologias'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
         $_SESSION['paginaEnCurso']='tecnologias';
         header('Location: index.php');
         exit;
     }
+    
+    if(!isset($_SESSION['paginaEnCurso'])){
+        $_SESSION['paginaEnCurso'] = 'inicioPublico';
+    }
+    
+    
+    
+    if (!array_key_exists($_SESSION['paginaEnCurso'], $aControladores['publico'])
+        && !isset($_SESSION['usuario214DWESAplicacionFinal2122'])) {
+        $_SESSION['paginaEnCurso'] = 'inicioPublico';
+    }
+    
     // Cargado de la página indicada.
-    require_once $aControladores[$_SESSION['paginaEnCurso']]; 
+    require_once array_column($aControladores, $_SESSION['paginaEnCurso'])[0];
     
     

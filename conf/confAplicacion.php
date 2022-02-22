@@ -21,7 +21,34 @@
     
     //Array de los ficheros de controladores
     $aControladores = [
-        "login" => "controller/cLogin.php",
+        "publico" =>[
+            "login" => "controller/cLogin.php",
+            "inicioPublico" => "controller/cInicioPublico.php",
+            "registro" => "controller/cRegistro.php",
+            "WIP" => "controller/cWIP.php",
+            "error" => "controller/cError.php",
+            "tecnologias"=>"controller/cTecnologias.php"
+            
+        ],
+        "privado" =>[
+            "inicioPrivado" => "controller/cInicioPrivado.php",
+            "detalle" => "controller/cDetalle.php",
+            "miCuenta" => "controller/cMiCuenta.php",
+            "borrarCuenta" => "controller/cBorrarCuenta.php",
+            "cambiarPassword" => "controller/cCambiarPassword.php",
+            "REST" => "controller/cREST.php",
+            "infoREST" => "controller/cInfoREST.php",
+        ],
+        "usuario" =>[
+            "mtoDepartamentos" => "controller/cMtoDepartamentos.php",
+            "altaDepartamento" => "controller/cAltaDepartamento.php",
+            "eliminarDepartamento" => "controller/cEliminarDepartamento.php",
+            "consultarModificarDepartamento" => "controller/cConsultarModificarDepartamento.php",
+        ],
+        "administrador"=>[
+            "mtoUsuarios" => "controller/cMtoUsuarios.php",
+        ],
+        /*"login" => "controller/cLogin.php",
         "inicioPrivado" => "controller/cInicioPrivado.php",
         "inicioPublico" => "controller/cInicioPublico.php",
         "registro" => "controller/cRegistro.php",
@@ -38,7 +65,7 @@
         "mtoUsuarios" => "controller/cMtoUsuarios.php",
         "WIP" => "controller/cWIP.php",
         "error" => "controller/cError.php",
-        "tecnologias"=>"controller/cTecnologias.php"
+        "tecnologias"=>"controller/cTecnologias.php"*/
     ];
     
     //Array de los ficheros de vistas
