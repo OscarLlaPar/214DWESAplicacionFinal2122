@@ -34,3 +34,8 @@ Aplicación final del curso DAW2 2021-2022. LoginLogout, mantenimiento de depart
 - PHP
 - HTML
 - CSS
+
+### Instrucciones para despliegue
+- Descargar el fichero .zip y extraer. Subir los archivos a la ubicación elegida al servidor
+- En la carpeta `conf` eliminar el fichero `confDB.php` y cambiar el nombre de `confDBExplotacion.php` a `confDB.php`
+- Ejecutar los ficheros de creación y carga inicial de la base de datos que se encuentran en la carpeta `scriptDB` introduciendo su nombre en el navegador
