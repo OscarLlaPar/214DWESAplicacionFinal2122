@@ -23,6 +23,7 @@ Aplicación final del curso DAW2 2021-2022. LoginLogout, mantenimiento de depart
 - Mantenimiento de usuarios para el usuario administrador
 - Buscar usuarios
 - Eliminar usuario
+- Modificar usuario
 
 ### Software utilizado
 - Ubuntu Server 20.04.3
