@@ -53,7 +53,7 @@
         exit;
     }
     
-    if(isset($_REQUEST['paginaSiguiente'])){
+    if(isset($_REQUEST['paginaSiguiente']) && $_SESSION['numPaginacionDepartamentos']<$_SESSION['numPaginas']){
         $_SESSION['numPaginacionDepartamentos']++;
         
         header('Location: index.php');
@@ -62,6 +62,13 @@
     
     if(isset($_REQUEST['primeraPagina'])){
         $_SESSION['numPaginacionDepartamentos']=1;
+        
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['ultimaPagina'])){
+        $_SESSION['numPaginacionDepartamentos']=$_SESSION['numPaginas'];
         
         header('Location: index.php');
         exit;
@@ -97,6 +104,8 @@
         $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda'] = $_REQUEST['busquedaDesc'];
         $_SESSION['criterioBusquedaDepartamentos']['estado'] = $_REQUEST['tipoCriterio'];
         
+        
+        
         if(isset($_REQUEST['busquedaDesc'])){
             $aRespuestas['busquedaDesc']=$_REQUEST['busquedaDesc'];
             $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc'],$_SESSION['criterioBusquedaDepartamentos']['estado'], $_SESSION['numPaginacionDepartamentos']-1);
@@ -104,6 +113,10 @@
         }
         
     }
+    
+    $numDepartamentos= DepartamentoPDO::contarDepartamentos($_SESSION['criterioBusquedaDepartamentos']['estado']??0);
+    $_SESSION['numPaginas']=($numDepartamentos%3===0)?$numDepartamentos/3:intdiv($numDepartamentos,3)+1;
+    
     $aDepartamentos=[];
     $contador=0;
     while($oResultado!=null){
@@ -127,6 +140,7 @@
             DepartamentoPDO::altaDepartamento($fila['T02_CodDepartamento'], $fila['T02_DescDepartamento'], $fila['T02_VolumenDeNegocio']);
         }
     }*/
+    
     
     $vistaEnCurso = $aVistas['mtoDepartamentos'];
     require_once "view/LayoutHeader.php";

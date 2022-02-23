@@ -1,1 +1,2 @@
 DirectoryIndex index.php
+ErrorDocument 404 /214DWESAplicacionFinal2122/errores/404.php

@@ -71,10 +71,11 @@
                     </table>
                 </div>
                 <div class="paginacion">
-                    <button class="boton" name="primeraPagina">| &#60;</button>
-                    <button class="boton" name="paginaAnterior">&#60;</button>
-                    <span><?php echo $_SESSION['numPaginacionDepartamentos'] ?></span>
-                    <button class="boton" name="paginaSiguiente">&#62;</button>
+                    <button class="boton" name="primeraPagina" <?php echo ($_SESSION['numPaginacionDepartamentos']===1)?"disabled":"" ?>>| &#60;</button>
+                    <button class="boton" name="paginaAnterior" <?php echo ($_SESSION['numPaginacionDepartamentos']===1)?"disabled":"" ?>>&#60;</button>
+                    <span><?php echo $_SESSION['numPaginacionDepartamentos']."/".$_SESSION['numPaginas'] ?></span>
+                    <button class="boton" name="paginaSiguiente" <?php echo ($_SESSION['numPaginacionDepartamentos']===$_SESSION['numPaginas'])?"disabled":"" ?>>&#62;</button>
+                    <button class="boton" name="ultimaPagina" <?php echo ($_SESSION['numPaginacionDepartamentos']===$_SESSION['numPaginas'])?"disabled":"" ?>>&#62; |</button>
                 </div>
             </form>
         </main>

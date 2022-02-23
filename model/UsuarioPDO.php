@@ -107,9 +107,9 @@
         * @return Usuario|false Devuelve el objeto usuario modificado si todo es correcto,
         * o false en caso contrario.
          */
-        public static function modificarUsuario($usuario, $descUsuario, $imagenUsuario = ''){
+        public static function modificarUsuario($usuario, $descUsuario, $imagenUsuario = null){
             $usuario->setDescUsuario($descUsuario);
-            $usuario->setImagenUsuario($imagenUsuario);
+            ($imagenUsuario === '' || is_null($imagenUsuario))?:$usuario->setImagenUsuario($imagenUsuario);
             
             $sUpdate = <<<QUERY
                 UPDATE T01_Usuario SET T01_DescUsuario = "{$usuario->getDescUsuario()}",

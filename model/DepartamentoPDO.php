@@ -44,7 +44,7 @@
          * 
          * @param String $descripcionDepartamento Descripción del departamento
          * a buscar.
-         * @param Int $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
+         * @param Integer $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
          * están de alta; 2 para buscar los que están de baja.
          * @return PDOStatement Resultado del insert.
          */
@@ -181,4 +181,33 @@
 
             return DBPDO::ejecutarConsulta($sSelect); 
         }
+        
+        /**
+         * Conteo del número de departamentos devueltos por la base de datos.
+         * 
+         * @param Integer $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
+         * están de alta; 2 para buscar los que están de baja.
+         * @return Integer Número de departamentos devueltos.
+         */
+        public static function contarDepartamentos($tipoBusqueda = 0){
+            switch($tipoBusqueda){
+                case 0: $sQueryTipoBusqueda='';
+                    break;
+                case 1: $sQueryTipoBusqueda='WHERE T02_FechaBajaDepartamento IS NULL';
+                    break;
+                case 2: $sQueryTipoBusqueda='WHERE T02_FechaBajaDepartamento IS NOT NULL';
+                    break;
+            }
+            
+            $sSelect = <<<QUERY
+                SELECT COUNT(*) AS numDepartamentos FROM T02_Departamento 
+                {$sQueryTipoBusqueda};
+            QUERY;
+                
+            $oResultado = DBPDO::ejecutarConsulta($sSelect);
+            $oResultado = $oResultado->fetchObject();
+            
+            return intval($oResultado->numDepartamentos);
+        }
+        
     }

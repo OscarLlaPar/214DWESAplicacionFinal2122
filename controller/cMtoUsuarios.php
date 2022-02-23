@@ -7,6 +7,7 @@
         exit;
     }
     
+    header('Access-Control-Allow-Origin: *'); 
     $vistaEnCurso = $aVistas['mtoUsuarios'];
     require_once "view/LayoutHeader.php";
     require_once $vistaEnCurso;
