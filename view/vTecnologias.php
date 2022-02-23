@@ -41,6 +41,60 @@
 
                 </div>-->
             </div>
+            
+            <div class="documentacionDAW">
+                <h2 class="tituloDoc">Documentación para despliegue</h2>
+                <a href="doc/DNS.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>DNS</h2>
+                    </div>
+                </a>
+                <a href="doc/Doxygen.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>Doxygen</h2>
+                    </div>
+                </a>
+                <a href="doc/EclipseGit.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>Git con Eclipse</h2>
+                    </div>
+                </a>
+                <a href="doc/VSCodeGit.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>Git con VS Code</h2>
+                    </div>
+                </a>
+                <a href="doc/Enjaular.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>Enjaular usuarios</h2>
+                    </div>
+                </a>
+                <a href="doc/HTTPS.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>HTTPS</h2>
+                    </div>
+                </a>
+                <a href="doc/LAPD.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>LAPD</h2>
+                    </div>
+                </a>
+                <a href="doc/PHPDocumentor.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>PHPDoc</h2>
+                    </div>
+                </a>
+                <a href="doc/Tomcat.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>Tomcat</h2>
+                    </div>
+                </a>
+                <a href="doc/Wordpress.pdf" target="__blank">
+                    <div class="archivo">
+                    <h2>Wordpress</h2>
+                    </div>
+                </a>
+            </div>
         </main>
     </body>
 </html>
