@@ -7,14 +7,14 @@
  */
 
     
-    
+    //Si se pulsa "Login"
     if(isset($_REQUEST['login'])){
-        $_SESSION['paginaAnterior'] = 'inicioPublico';
-        $_SESSION['paginaEnCurso'] = 'login';
-        header('Location: index.php');
+        $_SESSION['paginaAnterior'] = 'inicioPublico'; //Establecer página anterior
+        $_SESSION['paginaEnCurso'] = 'login'; //Ir a la página de login
+        header('Location: index.php'); //Recargar index
         exit;
     }
-    
+    //Cargar vista
     $paginaEnCurso = 'inicioPublico';
     require_once "view/LayoutHeader.php";
     require_once $aVistas[$paginaEnCurso];

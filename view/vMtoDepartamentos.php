@@ -16,7 +16,7 @@
                     <button class="boton" name="importarDepartamentos">Importar departamentos</button>
                     <button class="boton" name="exportarDepartamentos">Exportar departamentos</button>
                     <br>
-                    <input name="busquedaDesc" type="text" placeholder="Buscar por descripción..." value="<?php echo $_REQUEST['busquedaDesc']??""?>">                     
+                    <input name="busquedaDesc" type="text" placeholder="Buscar por descripción..." value="<?php echo $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda']??""?>">                     
                     <button class="boton" name="buscar">Buscar</button>
                     <input id="busquedaTodos" name="tipoCriterio" type="radio" value="0" <?php echo (!isset($_SESSION['criterioBusquedaDepartamentos']['estado'])||$_SESSION['criterioBusquedaDepartamentos']['estado']==0)?"checked":""?>>
                     <label for="busquedaTodos">Todos</label>
