@@ -12,6 +12,15 @@
                 <h2>Mantenimiento Departamentos</h2>
                 <div class="menu">
                     <button class="boton" name="volver">Volver</button>
+                    <?php
+                        if(isset($sVistaMensaje)){
+                            ?>
+                    <div class="mensajeExportar">
+                        <?php echo $sVistaMensaje?>
+                    </div>
+                            <?php
+                        }
+                    ?>
                     <button class="boton" name="altaDepartamento">Añadir departamento</button>
                     <button class="boton" name="importarDepartamentos">Importar departamentos</button>
                     <button class="boton" name="exportarDepartamentos">Exportar departamentos</button>

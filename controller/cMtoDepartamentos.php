@@ -4,6 +4,9 @@
     if(isset($_REQUEST['volver'])){
         $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Actualizar página anterior
         $_SESSION['paginaEnCurso']='inicioPrivado'; //Ir a inicio privado
+        //Destruir las pertinentes variables de la sesión
+        unset($_SESSION['criterioBusquedaDepartamentos']);
+        
         header('Location: index.php'); //Recargar index
         exit;
     }
@@ -82,6 +85,8 @@
         exit;
     }
     
+    
+    
     //Array para los mensajes de error
     $aErrores=[
       "busquedaDesc" => ""  
@@ -122,21 +127,17 @@
         //Si se cambia el tipo de búsqueda, volver a la primera página
         if($_SESSION['criterioBusquedaDepartamentos']['estado']!=0){
             $_SESSION['numPaginacionDepartamentos']=1;
-        }
-        
-        //Si se ha buscado algo
-        if(isset($_REQUEST['busquedaDesc'])){
-            $aRespuestas['busquedaDesc']=$_REQUEST['busquedaDesc'];
-            //Mostrar departamentos según la búsqueda
-            $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc'],$_SESSION['criterioBusquedaDepartamentos']['estado'], $_SESSION['numPaginacionDepartamentos']-1);
-            $oResultado=$oDepartamentos->fetchObject();
-        }
-        
+        }  
     }
     //Contar departamentos
-    $numDepartamentos= DepartamentoPDO::contarDepartamentos($_SESSION['criterioBusquedaDepartamentos']['estado']??0);
+    $numDepartamentos= DepartamentoPDO::contarDepartamentos($_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda']??"",$_SESSION['criterioBusquedaDepartamentos']['estado']??0);
     //Calcular páginas a partir de los departamentos
     $_SESSION['numPaginas']=($numDepartamentos%3===0)?$numDepartamentos/3:intdiv($numDepartamentos,3)+1;
+    
+    //Mostrar departamentos según la búsqueda
+    $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda']??"",$_SESSION['criterioBusquedaDepartamentos']['estado']??0, $_SESSION['numPaginacionDepartamentos']-1);
+    $oResultado=$oDepartamentos->fetchObject();
+    
     //Preparar departamentos para la vista
     $aDepartamentos=[];
     $contador=0;
@@ -154,6 +155,7 @@
         $contenidoJSON = json_encode($aDepartamentos, JSON_PRETTY_PRINT);
         //Escribir en archivo
         $escritura = file_put_contents('tmp/departamentos.json', $contenidoJSON);
+        $sVistaMensaje = "Se han escrito {$escritura} bytes en 'tmp/departamentos.json'";
     }
     //Si se pulsa el botón de "Importar departamentos"
     if(isset($_REQUEST['importarDepartamentos'])){

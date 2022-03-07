@@ -185,22 +185,24 @@
         /**
          * Conteo del número de departamentos devueltos por la base de datos.
          * 
+         * @param String $descripcionDepartamento Descripción del departamento a buscar.
          * @param Integer $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
          * están de alta; 2 para buscar los que están de baja.
          * @return Integer Número de departamentos devueltos.
          */
-        public static function contarDepartamentos($tipoBusqueda = 0){
+        public static function contarDepartamentos($descripcionDepartamento, $tipoBusqueda = 0){
             switch($tipoBusqueda){
                 case 0: $sQueryTipoBusqueda='';
                     break;
-                case 1: $sQueryTipoBusqueda='WHERE T02_FechaBajaDepartamento IS NULL';
+                case 1: $sQueryTipoBusqueda='AND T02_FechaBajaDepartamento IS NULL';
                     break;
-                case 2: $sQueryTipoBusqueda='WHERE T02_FechaBajaDepartamento IS NOT NULL';
+                case 2: $sQueryTipoBusqueda='AND T02_FechaBajaDepartamento IS NOT NULL';
                     break;
             }
             
             $sSelect = <<<QUERY
                 SELECT COUNT(*) AS numDepartamentos FROM T02_Departamento 
+                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%'    
                 {$sQueryTipoBusqueda};
             QUERY;
                 
