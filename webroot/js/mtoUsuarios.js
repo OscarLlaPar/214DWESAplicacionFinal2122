@@ -37,41 +37,6 @@ function mostrarUsuarios(){
                             celda.appendChild(imagen);
                             let saltoLinea = document.createElement("br");
                             celda.appendChild(saltoLinea);
-                            /*let inputImagen = document.createElement("input");
-                            inputImagen.setAttribute("type", "file");
-                            inputImagen.setAttribute("id", codUsuario);*/
-                            /*inputImagen.addEventListener("change",function(event){
-                                let imagen = inputImagen.files[0];
-                                let imagenBase64="";
-                                let reader = new FileReader();
-                                reader.readAsDataURL(imagen);
-                                reader.onload = function () {
-                                    console.log("Entró");
-                                    imagenBase64=reader.result;
-                                };
-                                reader.onerror = function (error) {
-                                  console.log('Error: ', error);
-                                };
-                                if(confirm(`¿Confirmar cambios?`)){
-                                    xhttp.onreadystatechange = function() {
-                                        if (this.readyState == 4 && this.status == 200) {
-                                            mostrarUsuarios();
-                                            alert("Usuario modiicado");
-                                        }
-                                    };
-                                    //Clase
-                                    xhttp.open("GET", `http://daw214.sauces.local/214DWESAplicacionFinal2122/api/modificarUsuario.php?codUsuario=${inputImagen.id}&descUsuario=&imagenUsuario=${imagenBase64}`, true);
-                                    //Casa
-                                    //xhttp.open("GET", `http://192.168.0.120/214DWESAplicacionFinal2122/api/modificarUsuario.php?codUsuario=${campoTexto.id}&descUsuario=${campoTexto.value}&imagenUsuario=`, true);
-                                    //Explotación
-                                    //xhttp.open("GET", `https://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/modificarUsuario.php?codUsuario=${campoTexto.id}&descUsuario=${campoTexto.value}`, true);
-                                    xhttp.send();
-                                }
-                                else{
-                                    mostrarUsuarios();
-                                }
-                            });*/
-                            /*celda.appendChild(inputImagen);*/
                         }
                         else{
                             if(campo === "T01_FechaHoraUltimaConexion" && usuario[campo]!==null){

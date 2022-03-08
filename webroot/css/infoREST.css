@@ -1,10 +1,22 @@
+.contenidoInfo{
+    display:flex;
+    flex-flow:column;
+    align-items: center;
+    width:100%;
+    gap: 20px;
+}
 .textoInfo{
     background:black;
-    height:75vh;
     padding:20px 0;
+    width:100%;
 }
 .textoInfo *{
     margin:15px;
+}
+.nombreApi{
+    font-family: Amiri;
+    font-size:36px;
+    font-weight: lighter;
 }
 pre, code{
     background-color: dimgray;

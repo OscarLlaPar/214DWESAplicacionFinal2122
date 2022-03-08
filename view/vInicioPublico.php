@@ -132,7 +132,7 @@
                     <h2>Uso de $_SESSION</h2>
                 </div>
                 <div class="imagenDiagrama">
-                    <a href="doc/220111UsoDeLaSessionParaLaAplicación.pdf" target="__blank"><img src="webroot/img/usoSession.jpg"></a>
+                    <a href="doc/UsoSesion.pdf" target="__blank"><img src="webroot/img/usoSession.jpg"></a>
                 </div>
             </div>
         </div>
