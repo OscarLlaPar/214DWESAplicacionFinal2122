@@ -29,10 +29,6 @@
                     <pre>
                         https://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/consultaDepartamentoPorCodigo.php?codDepartamento=UNO
                     </pre>
-                    <!--<h4>Ejemplo de devolución</h4>
-                    <pre>
-                        
-                    </pre>-->
                     <h4>Errores</h4>
                     <p>
                         En caso de error el valor de <code>RespuestaOK</code> pasa a ser <code>false</code>.
@@ -58,10 +54,6 @@
                     <pre>
                         https://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/buscarUsuariosPorDesc.php?descUsuario=Administrador
                     </pre>
-                    <!--<h4>Ejemplo de devolución</h4>
-                    <pre>
-                        
-                    </pre>-->
                     <hr>
                     <h3 class="nombreApi">Borrar usuario</h3>
                     <p>
@@ -79,10 +71,6 @@
                     <pre>
                         https://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/borrarUsuario.php?codUsuario=prueba
                     </pre>
-                    <!--<h4>Ejemplo de devolución</h4>
-                    <pre>
-                        
-                    </pre>-->
                     <hr>
                     <h3 class="nombreApi">Modificar descripción de usuario</h3>
                     <p>
@@ -104,33 +92,6 @@
                     <pre>
                         https://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/modificarUsuario.php?codUsuario=prueba&descUsuario=Dios
                     </pre>
-                    <!--<h4>Ejemplo de devolución</h4>
-                    <pre>
-                        
-                    </pre>-->
-                    <!--
-                    <hr>
-                    <h3 class="nombreApi">Cambiar contraseña de usuario</h3>
-                    <p>
-                        
-                    </p>
-                    <h4>Enlace de la API</h4>
-                    <pre>
-                        https://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/consultaDepartamentoPorCodigo.php
-                    </pre>
-                    <h4>Nombre del parámetro</h4>
-                    <pre>
-                        codDepartamento
-                    </pre>
-                    <h4>Ejemplo de uso</h4>
-                    <pre>
-                        https://daw214.ieslossauces.es/214DWESAplicacionFinal2122/api/consultaDepartamentoPorCodigo.php?codDepartamento=UNO
-                    </pre>
-                    -->
-                    <!--<h4>Ejemplo de devolución</h4>
-                    <pre>
-                        
-                    </pre>-->
                 </div>
                 
             </form>
